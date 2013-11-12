@@ -1,0 +1,10 @@
+var Instruction = function (name, building, room, ext) {
+this. name = name;
+this.building = building;
+this.room = room;
+this.extension = ext;
+}
+
+var instructors = [];
+instructors.push (new Instructor('Matthew', 'HC', '0007', '5345'));
+instructors.push (new Instructor('Allan', ... ));

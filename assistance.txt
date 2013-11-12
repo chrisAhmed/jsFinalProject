@@ -1,0 +1,2 @@
+http://www.w3schools.com/jsref/met_loc_replace.asp
+http://www.w3schools.com/jsref/met_win_open.asp

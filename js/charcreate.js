@@ -1,6 +1,7 @@
 //script
 
 function charCreate() {
+	//This function is what records the user's responses to name and gender and begins game	
 	character={
 	name:'',
 	gender:'',
@@ -14,8 +15,10 @@ function charCreate() {
 	character.name=document.getElementById('charName').value;
 alert(character.name);
 alert(character.gender);
+//changePage('game1.html'); //This will 
 }
 
 function charImgswitch(gender) {
-document.getElementById('charImg').src='images/charSheets/heroIcons/hero'+ gender + 'icon.png';
+	//This function changes the image depending on what gender radio button the user clicks
+	document.getElementById('charImg').src='images/charSheets/heroIcons/hero'+ gender + 'icon.png';
 }

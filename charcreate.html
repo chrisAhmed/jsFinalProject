@@ -13,9 +13,11 @@
 		<input id="charName" type="text" value="Sam"><br>
 		<br>
 		Are you:
-		<input type="radio" name="gender" value="male" id="genderMale"> Male
-		<input type="radio" name="gender" value="female" id="genderFemale"> Female
-		<br><br>
+		<input type="radio" name="gender" value="male" id="genderMale" onclick="charImgswitch('M')"> Male
+		<input type="radio" name="gender" value="female" id="genderFemale" onclick="charImgswitch('F')"> Female
+		<br>
+		<img id="charImg" src="" height="100">
+		<br>
 		<button onclick="charCreate(document.getElementById('charName').value)">Begin Game</button>
 		</div>
 	</body>

@@ -10,3 +10,7 @@ function charCreate(name) {
 alert(name);
 alert(gender);
 }
+
+function charImgswitch(gender) {
+document.getElementById('charImg').src='images/charSheets/heroIcons/hero'+ gender + 'icon.png';
+}

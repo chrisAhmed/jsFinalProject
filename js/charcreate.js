@@ -1,14 +1,19 @@
 //script
 
-function charCreate(name) {
+function charCreate() {
+	character={
+	name:'',
+	gender:'',
+	};
 	if(document.getElementById('genderMale').checked) {
-  		gender="male"
+  		character.gender="male"
 	}
 	else if(document.getElementById('genderFemale').checked) {
-  		gender="female"
+  		character.gender="female"
 	}
-alert(name);
-alert(gender);
+	character.name=document.getElementById('charName').value;
+alert(character.name);
+alert(character.gender);
 }
 
 function charImgswitch(gender) {

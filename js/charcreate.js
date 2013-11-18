@@ -13,9 +13,9 @@ function charCreate() {
   		character.gender="female"
 	}
 	character.name=document.getElementById('charName').value;
-alert(character.name);
-alert(character.gender);
-//changePage('game1.html'); //This will 
+//alert(character.name);   //These were used for testing all the variables
+//alert(character.gender);
+changePage('intro.html'); //This will change the page to the alerts
 }
 
 function charImgswitch(gender) {

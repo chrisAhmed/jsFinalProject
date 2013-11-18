@@ -3,3 +3,7 @@
 function changePage(filename) {
 window.location.replace(filename);
 }
+
+function backstoryAlert() {
+alert(character.gender);
+}

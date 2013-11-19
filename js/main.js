@@ -7,3 +7,9 @@ window.location.replace(filename);
 function backstoryAlert() {
 alert(character.gender);
 }
+
+function showDiv(id) {
+}
+
+function hideDiv(id) {
+}

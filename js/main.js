@@ -40,6 +40,7 @@ function charImgswitch(gender) {
 	document.getElementById('charImg').src='images/charSheets/heroIcons/hero'+ gender + 'icon.png';
 }
 
+
 //THIS FUNCTION IS FOR SHOWING ALL THE BACKSTORY STUFFS
 
 function backstoryAlert() {
@@ -71,18 +72,34 @@ alert('The adventure begins...');
 
 showDiv('start');
 document.title = 'The Legacy of Sam';
+
+//Setting Coordinate Variables
+xCord=0;
+yCord=0;
 }
 
 
-//THESE FUNCTIONS MOVE THE MAP
+//THESE FUNCTIONS MOVE THE MAP  NEED TO MAKE THEM STOP AT A CERTAIN POINT
+function mapImage(){
+	document.getElementById('gameMap').src='images/maps/' + xCord + 'x' + yCord + '.png';
+}
+
 function moveUp(){
+yCord=yCord+1;
+mapImage();
 }
 
 function moveDown(){
+yCord=yCord-1;
+mapImage();
 }
 
 function moveLeft(){
+xCord=xCord-1;
+mapImage();
 }
 
 function moveRight(){
+xCord=xCord+1;
+mapImage();
 }

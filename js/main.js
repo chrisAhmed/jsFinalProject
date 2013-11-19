@@ -5,11 +5,11 @@ window.location.replace(filename);
 }
 
 function showDiv(id) {
-document.getElementById(id).style.visibility="visible";
+document.getElementById(id).style.display="inline-block";
 }
 
 function hideDiv(id) {
-document.getElementById(id).style.visibility="hidden";
+document.getElementById(id).style.display="none";
 } 
 
 //THESE FUNCTIONS ARE FOR CHARACTER CREATION
@@ -68,4 +68,7 @@ alert('...the next morning...');
 alert(character.name + ' awakens from their slumber, cold, afraid. ' + perProC + ' gets up and walks around. Everything is gone.');
 alert(perProC + ' finds a small hut that managed to defy what destruction happened. Inside ' + perPro + ' finds a wooden sword and some bread.');
 alert('The adventure begins...');
+
+showDiv('start');
+document.title = 'The Legacy of Sam';
 }

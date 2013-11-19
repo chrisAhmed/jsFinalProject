@@ -4,22 +4,32 @@
 	<head>
 		<title>Character Creation Screen</title>
 		<script type="text/javascript" src="js/main.js"></script>
-		<script type="text/javascript" src="js/charcreate.js"></script>
 	</head>
 	<body>
-		<div align=center id="charCreate">
-		<h1>Create Your Character</h1>
-		<!-- Add Game Logo Here Maybe? -->
-		<label for="charName">What is your name?</label>
-		<input id="charName" type="text" value="Sam"><br>
-		<br>
-		Are you:
-		<input type="radio" name="gender" value="male" id="genderMale" onclick="charImgswitch('M')"> Male
-		<input type="radio" name="gender" value="female" id="genderFemale" onclick="charImgswitch('F')"> Female
-		<br>
-		<img id="charImg" src="images/charSheets/heroIcons/silhouette.png" height="100">
-		<br>
-		<button onclick="charCreate()">Begin Game</button>
+		<div align=center>
+		
+			<div id="charCreate">
+				<!-- This div is for character creation -->
+				<h1>Create Your Character</h1>
+				<!-- Add Game Logo Here Maybe? -->
+				<label for="charName">What is your name?</label>
+				<input id="charName" type="text" value="Sam"><br>
+				<br>
+				Are you:
+				<input type="radio" name="gender" value="male" id="genderMale" onclick="charImgswitch('M')"> Male
+				<input type="radio" name="gender" value="female" id="genderFemale" onclick="charImgswitch('F')"> Female
+				<br>
+				<img id="charImg" src="images/charSheets/heroIcons/silhouette.png" height="100">
+				<br>
+				<button onclick="charCreate()">Begin Game</button>
+			</div>
+		
+			<div id="start" style="display: none;">
+				<!-- This div is where the game begins -->
+				<h1>The Legacy of Sam</h1>
+				<img id="gameMap" src="images/maps/0x0.png
+			</div>
+		
 		</div>
 	</body>
 </html>

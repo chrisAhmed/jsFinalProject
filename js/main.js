@@ -72,3 +72,17 @@ alert('The adventure begins...');
 showDiv('start');
 document.title = 'The Legacy of Sam';
 }
+
+
+//THESE FUNCTIONS MOVE THE MAP
+function moveUp(){
+}
+
+function moveDown(){
+}
+
+function moveLeft(){
+}
+
+function moveRight(){
+}

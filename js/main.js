@@ -105,3 +105,17 @@ function moveRight(){
 xCord=xCord+1;
 mapImage();
 }
+
+
+//THESE FUNCTIONS ADD OR REMOVE HP
+function removeHP(amt){
+	showDiv('charStats');
+	if (character.hp>0){
+		character.hp=character.hp-amt;
+	}
+	else {
+		alert('You died!');
+	}
+	
+	document.getElementById('charStats').innerHTML=character.hp;
+}

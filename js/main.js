@@ -76,7 +76,6 @@ function backstoryAlert() {
 	document.title = 'The Legacy of Hero';
 }
 
-
 /*THESE FUNCTIONS MOVE THE MAP 
 TO DO: NEED TO MAKE THEM STOP AT A CERTAIN POINT
 Create array of map coordinates
@@ -106,12 +105,50 @@ xCord=xCord+1;
 mapImage();
 }
 
-
+//Maps coordinates of map images into an array for future calculations.
+//This is very long indeed due to the fact that there are 32 different map images
+//the player could walk to.
+//The "//" next to the array number indicates the image has not been made yet.
+function cordMapping(){
+	mapCords = new Array();
+	mapCords[1] = "0x0";
+	mapCords[2] = "0x1";
+	mapCords[3] = "0x2";
+	mapCords[4] = "0x3";
+	mapCords[5] = "0x-1";
+	mapCords[6] = "0x-2";
+	mapCords[7] = "0x-3";
+	mapCords[8] = "1x0";
+	mapCords[9] = "2x0";
+	mapCords[10] = "3x0";
+	mapCords[11] = "-1x0";
+	mapCords[12] = "-2x0";
+	mapCords[13] = "-3x0";
+	mapCords[14] = "-4x0";
+	mapCords[15] = "-5x0";
+	mapCords[16] = "-6x0";
+	mapCords[17] = "1x1"; //
+	mapCords[18] = "2x1"; //
+	mapCords[19] = "1x2"; //
+	mapCords[20] = "2x2"; //
+	mapCords[21] = "-1x-1"; //
+	mapCords[22] = "-2x-1"; //
+	mapCords[23] = "-1x-2"; //
+	mapCords[24] = "-2x-2"; // 
+	mapCords[25] = "1x-1"; //
+	mapCords[26] = "1x-2"; //
+	mapCords[27] = "2x-1"; //
+	mapCords[28] = "2x-2"; //
+	mapCords[29] = "-1x1"; //
+	mapCords[30] = "-2x1"; //
+	mapCords[31] = "-1x2"; //
+	mapCords[32] = "-2x2"; //
+}
 //THESE FUNCTIONS ADD OR REMOVE HP
 function removeHP(amt){
 	showDiv('charStats');
 	if (character.hp>0){
-		character.hp=character.hp-amt;
+		character.hp=character.hp - amt;
 	}
 	else {
 		alert('You died!');

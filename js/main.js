@@ -1,11 +1,17 @@
 //This JS file is for scripts that will be used throughout the various game pages
+
+//Copyright 2013 Matt Marakovits and Chris Ahmed
+
+//Changes a Page
 function changePage(filename) {
 	window.location.replace(filename);
 }
+
 //show a div when needed
 function showDiv(id) {
 	document.getElementById(id).style.display="inline-block";
 }
+
 //hide a div when needed
 function hideDiv(id) {
 	document.getElementById(id).style.display="none";
@@ -75,7 +81,7 @@ function backstoryAlert() {
 
 //INITIALIZING CHARACTER STATS
 	document.getElementById('charHP').innerHTML='Health: ' + character.hp;
-
+	document.getElementById('charWeapon').innerHTML='Weapon: ' + character.weapon;
 
 //SHOWING DIVS
 	showDiv('start');

@@ -72,7 +72,14 @@ function backstoryAlert() {
 	alert(perProC + ' finds a small hut that managed to defy what destruction happened. Inside ' + perPro + ' finds a wooden sword and some bread.');
 	alert('The adventure begins...');
 
+
+//INITIALIZING CHARACTER STATS
+	document.getElementById('charHP').innerHTML='Health: ' + character.hp;
+
+
+//SHOWING DIVS
 	showDiv('start');
+	showDiv('charStats');
 	document.title = 'The Legacy of Hero';
 }
 
@@ -146,13 +153,20 @@ function cordMapping(){
 }
 //THESE FUNCTIONS ADD OR REMOVE HP
 function removeHP(amt){
-	showDiv('charStats');
-	if (character.hp>0){
-		character.hp=character.hp - amt;
+	if (character.hp>1){
+		character.hp=character.hp-amt;
 	}
 	else {
+		character.hp=character.hp-amt;
 		alert('You died!');
 	}
 	
-	document.getElementById('charStats').innerHTML=character.hp;
+	document.getElementById('charHP').innerHTML=character.hp;
+}
+
+function addHP(amt){
+	if (character.hp<16){
+		character.hp=character.hp+amt;
+	}
+	document.getElementById('charHP').innerHTML=character.hp;
 }

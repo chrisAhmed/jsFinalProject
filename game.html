@@ -16,7 +16,7 @@
 				<input id="charName" type="text" value="Sam"><br>
 				<br>
 				Are you:
-				<input type="radio" name="gender" value="male" id="genderMale" onclick="charImgswitch('M')"> Male
+				<input type="radio" name="gender" value="male" id="genderMale" onclick="charImgswitch('M')" checked> Male
 				<input type="radio" name="gender" value="female" id="genderFemale" onclick="charImgswitch('F')"> Female
 				<br>
 				<img id="charImg" src="images/charSheets/heroIcons/silhouette.png" height="100">
@@ -31,12 +31,14 @@
 				<button onclick="moveLeft()">Move Left</button>
 				<button onclick="moveUp()">Move Up</button>
 				<button onclick="moveDown()">Move Down</button>
-				<button onclick="moveRight()" vertical-align:top >Move Right</button><br>
-				<button onclick="removeHP(1)">Remove HP</button>				
+				<button onclick="moveRight()" vertical-align:top >Move Right</button><br>				
 			</div>
-			
+			<br>
+			<br>
 			<div id="charStats" style="display:none;">
-				
+				<b>Character Stats:</b><br>
+				<div id="charHP">
+				</div>
 			</div>
 		
 		</div>

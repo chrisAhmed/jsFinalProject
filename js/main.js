@@ -106,7 +106,7 @@ function mapImage(){
 //Setting up button movement for game.
 function moveUp(){
 	tempY+=1;
-	if(imageExist() === true)
+	if(imageExist())
 	{
 		alert("You're moving on");
 		yCord+=1;
@@ -119,7 +119,7 @@ function moveUp(){
 }
 function moveDown(){
 	tempY-=1;
-	if(imageExist() === true)
+	if(imageExist())
 	{
 		alert("You're moving on");
 		yCord-=1;	
@@ -133,7 +133,7 @@ function moveDown(){
 }
 function moveLeft(){
 	tempX-=1;
-	if(imageExist() === true)
+	if(imageExist())
 	{
 		alert("You're moving on");
 		xCord-=1;
@@ -147,7 +147,7 @@ function moveLeft(){
 }
 function moveRight(){
 	tempX+=1;
-	if(imageExist() === true)
+	if(imageExist())
 	{
 		alert("You're moving on");
 		xCord+=1;
@@ -176,8 +176,8 @@ function imageExist()
 /*Maps coordinates of map images into an array for future calculations.
 This is very long indeed due to the fact that there are 28 different map images
 the player could walk to.
-This map is formed to a  backwards L shape to give it some 'worldly' formation.*/
-
+This map is formed to a  backwards L shape to give it some 'worldly' formation.
+as opposed to a square.*/
 function cordMapping(){
 	mapCords[1] = "0x0";
 	mapCords[2] = "0x1";

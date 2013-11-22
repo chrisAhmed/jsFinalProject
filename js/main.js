@@ -240,59 +240,64 @@ function battleCheck(){
 	}
 }
 
-//THESE FUNCTIONS ADD OR REMOVE HP
-function removeHP(amt){
-	if (character.hp-amt>0){
-		character.hp=character.hp-amt;
-		document.getElementById('charHP').innerHTML='Health: ' + character.hp;
-	}
-	else {
-		character.hp=0;
-		document.getElementById('charHP').innerHTML='Health: ' + character.hp;
-		alert('You died!');
-	}
+//THESE FUNCTIONS AR DEDICATED TO CHARACTER STAT FUNCTIONS
+
+	//THESE FUNCTIONS ADD OR REMOVE HP
+	function removeHP(amt){
+		if (character.hp-amt>0){
+			character.hp=character.hp-amt;
+			document.getElementById('charHP').innerHTML='Health: ' + character.hp;
+		}
+		else {
+			character.hp=0;
+			document.getElementById('charHP').innerHTML='Health: ' + character.hp;
+			alert('You died!');
+		}
 	
-}
+	}
 
-function addHP(amt){
-	if (character.hp<16){
-		if (character.hp+amt<=15){
-			character.hp=character.hp+amt;
-			document.getElementById('charHP').innerHTML='Health: ' + character.hp;
-		}
-		else if (character.hp+amt>15){
-			character.hp=15;
-			document.getElementById('charHP').innerHTML='Health: ' + character.hp;
+	function addHP(amt){
+		if (character.hp<16){
+			if (character.hp+amt<=15){
+				character.hp=character.hp+amt;
+				document.getElementById('charHP').innerHTML='Health: ' + character.hp;
+			}
+			else if (character.hp+amt>15){
+				character.hp=15;
+				document.getElementById('charHP').innerHTML='Health: ' + character.hp;
+			}
 		}
 	}
-}
 
 
-//THESE FUNCTIONS ADD OR REMOVE CHAR.FOOD
-function removeFood(amt){
-	if (character.food>=1){
-		character.food=character.food-amt;
+	//THESE FUNCTIONS ADD OR REMOVE CHAR.FOOD
+	function removeFood(amt){
+		if (character.food>=1){
+			character.food=character.food-amt;
+			document.getElementById('charFood').innerHTML='Food: ' + character.food;
+		}
+	}
+
+	function addFood(amt){
+		character.food=character.food+amt;
 		document.getElementById('charFood').innerHTML='Food: ' + character.food;
 	}
-}
-
-function addFood(amt){
-	character.food=character.food+amt;
-	document.getElementById('charFood').innerHTML='Food: ' + character.food;
-}
 
 
-//THESE FUNCTIONS ADD ATTACK POINTS
+	//THESE FUNCTIONS ADD ATTACK POINTS
 
-function addAttack(amt){
-	if (character.attack<10){
-		if (character.attack+amt<=10){
-			character.attack=character.attack+amt;
-			document.getElementById('charAttack').innerHTML='Attack: ' + character.attack;
-		}
-		else if (character.attack+amt>10){
-			character.attack=10;
-			document.getElementById('charAttack').innerHTML='Attack: ' + character.attack;
+	function addAttack(amt){
+		if (character.attack<10){
+			if (character.attack+amt<=10){
+				character.attack=character.attack+amt;
+				document.getElementById('charAttack').innerHTML='Attack: ' + character.attack;
+			}
+			else if (character.attack+amt>10){
+				character.attack=10;
+				document.getElementById('charAttack').innerHTML='Attack: ' + character.attack;
+			}
 		}
 	}
-}
+	
+	
+//THESE FUNCTIONS WILL BE USED FOR NPC\VILLAGE INTERACTIONS

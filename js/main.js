@@ -53,6 +53,7 @@ function backstoryAlert() {
 	//Setting Coordinate Variables
 	xCord=0;
 	yCord=0;
+	cordMapping();
 	
 	if (character.gender==="male") {
 		perPro="he";
@@ -72,7 +73,7 @@ function backstoryAlert() {
 	alert('...until everyone died, except for one young person named ' + character.name +'.');
 	alert(character.name + ' wakes up to the smell of smoke, the crackling of dwindling flames and the faint sound of Michael Bolton\'s music in the distance.');
 	alert(perProC + ' looks around to see darkness, except from the light of the flickering flames surrounding ' + objPro +'. the sight one could not believe was before him. Ashes coat the destroyed town.');
-	alert(character.name + ' in disbelief, faints.');
+	alert(character.name + ', in disbelief, faints.');
 	alert('...the next morning...');
 	alert(character.name + ' awakens from their slumber, cold, afraid. ' + perProC + ' gets up and walks around. Everything is gone.');
 	alert(perProC + ' finds a small hut that managed to defy what destruction happened. Inside ' + perPro + ' finds a wooden sword and some bread.');
@@ -91,7 +92,7 @@ function backstoryAlert() {
 
 /*THESE FUNCTIONS MOVE THE MAP 
 TO DO: NEED TO MAKE THEM STOP AT A CERTAIN POINT
-Create array of map coordinates
+Create array of map coordinates *DONE*
 When the user clicks a button, compare what the co-ordinates would be to
 the list of coordinates in the array.
 If the co-ordinates do match up, continue with moving on.
@@ -102,28 +103,76 @@ function mapImage(){
 }
 //Setting up button movement for game.
 function moveUp(){
-yCord=yCord+1;
-mapImage();
+	tempX = yCord;
+	tempY = xCord;
+	tempY+=1;
+	if(imageExist() === true)
+	{
+		alert("You're moving on");
+		yCord+=1;
+		mapImage();
+	}
+	else
+	{
+		alert("You can not move this way");
+	}
 }
 function moveDown(){
-yCord=yCord-1;
-mapImage();
+	tempX = yCord;
+	tempY = xCord;
+	tempY-=1;
+	if(imageExist() === true)
+	{
+		alert("You're moving on");
+		yCord-=1;	
+		mapImage();
+	}
+	else
+	{
+		alert("You can not move this way");
+	}
+
 }
 function moveLeft(){
-xCord=xCord-1;
-mapImage();
+	tempX = yCord;
+	tempY = xCord;
+	tempX -=1;
+	if(imageExist() === true)
+	{
+		alert("You're moving on");
+		xCord-=1;
+		mapImage();
+	}
+	else
+	{
+		alert("You can not move this way");
+	}
+
 }
 function moveRight(){
-xCord=xCord+1;
-mapImage();
+	tempX = yCord;
+	tempY = xCord;
+	tempX+=1;
+	if(imageExist() === true)
+	{
+		alert("You're moving on");
+		xCord+=1;
+		mapImage();
+	}
+	else
+	{
+		alert("You can not move this way");
+	}
 }
 
 //Maps coordinates of map images into an array for future calculations.
-//This is very long indeed due to the fact that there are 32 different map images
+//This is very long indeed due to the fact that there are 28 different map images
 //the player could walk to.
+//This map is formed to a  backwards L shape to give it some 'worldly' formation.
 //The "//" next to the array number indicates the image has not been made yet.
+var mapCords = new Array();
+
 function cordMapping(){
-	mapCords = new Array();
 	mapCords[1] = "0x0";
 	mapCords[2] = "0x1";
 	mapCords[3] = "0x2";
@@ -140,23 +189,35 @@ function cordMapping(){
 	mapCords[14] = "-4x0";
 	mapCords[15] = "-5x0";
 	mapCords[16] = "-6x0";
-	mapCords[17] = "1x1"; //
-	mapCords[18] = "2x1"; //
-	mapCords[19] = "1x2"; //
-	mapCords[20] = "2x2"; //
-	mapCords[21] = "-1x-1"; //
-	mapCords[22] = "-2x-1"; //
-	mapCords[23] = "-1x-2"; //
-	mapCords[24] = "-2x-2"; // 
-	mapCords[25] = "1x-1"; //
-	mapCords[26] = "1x-2"; //
-	mapCords[27] = "2x-1"; //
-	mapCords[28] = "2x-2"; //
-	mapCords[29] = "-1x1"; //
-	mapCords[30] = "-2x1"; //
-	mapCords[31] = "-1x2"; //
-	mapCords[32] = "-2x2"; //
+	mapCords[17] = "1x1"; 
+	mapCords[18] = "2x1"; 
+	mapCords[19] = "1x2"; 
+	mapCords[20] = "2x2"; 
+	mapCords[21] = "-1x-1"; 
+	mapCords[22] = "-2x-1";
+	mapCords[23] = "-1x-2";
+	mapCords[24] = "-2x-2";  
+	mapCords[25] = "1x-1"; 
+	mapCords[26] = "1x-2"; 
+	mapCords[27] = "2x-1";
+	mapCords[28] = "2x-2"; 
 }
+//compares map coordinates to let player know they can not go that way.
+function imageExist() 
+{
+	cord = tempX + 'x' + tempY;
+	for(var i = 0; i < mapCords.length; i++)
+	{
+		if(cord === mapCords[i])
+		{
+			return true;
+			break;
+		}
+	} 
+	return false;
+
+}
+
 //THESE FUNCTIONS ADD OR REMOVE HP
 function removeHP(amt){
 	if (character.hp>1){

@@ -43,6 +43,14 @@ function charImgswitch(gender) {
 	document.getElementById('charImg').src='images/charSheets/heroIcons/hero'+ gender + 'icon.png';
 }
 
+var Monster = function(name,hp,attack,weapon){
+	this.name = name;
+	this.hp = hp;
+	this.attack = attack;
+	this.weapon = weapon;
+}
+var monsters = new Array();
+
 //THIS FUNCTION IS FOR SHOWING ALL THE BACKSTORY STUFFS
 function backstoryAlert() {
 	//HE\SHE is personal pronoun (perPro), and HIM\HER is objective pronoun (objPro)

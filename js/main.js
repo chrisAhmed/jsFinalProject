@@ -1,5 +1,4 @@
 //This JS file is for scripts that will be used throughout the various game pages
-
 //Copyright 2013 Matt Marakovits and Chris Ahmed
 
 //Changes a Page
@@ -11,7 +10,6 @@ function changePage(filename) {
 function showDiv(id) {
 	document.getElementById(id).style.display="inline-block";
 }
-
 //hide a div when needed
 function hideDiv(id) {
 	document.getElementById(id).style.display="none";
@@ -37,8 +35,6 @@ function charCreate() {
   		character.gender="female"
 	}
 	character.name=document.getElementById('charName').value;
-//alert(character.name);   //These were used for testing all the variables
-//alert(character.gender);
 	backstoryAlert();
 }
 
@@ -49,7 +45,7 @@ function charImgswitch(gender) {
 
 //THIS FUNCTION IS FOR SHOWING ALL THE BACKSTORY STUFFS
 function backstoryAlert() {
-//HE\SHE is personal pronoun (perPro), and HIM\HER is objective pronoun (objPro)
+	//HE\SHE is personal pronoun (perPro), and HIM\HER is objective pronoun (objPro)
 	//Setting Coordinate Variables
 	xCord=0;
 	yCord=0;
@@ -78,13 +74,12 @@ function backstoryAlert() {
 	alert(character.name + ' awakens from their slumber, cold, afraid. ' + perProC + ' gets up and walks around. Everything is gone.');
 	alert(perProC + ' finds a small hut that managed to defy what destruction happened. Inside ' + perPro + ' finds a wooden sword and some bread.');
 	alert('The adventure begins...');
-
-
-//INITIALIZING CHARACTER STATS
+	
+	//INITIALIZING CHARACTER STATS
 	document.getElementById('charHP').innerHTML='Health: ' + character.hp;
 	document.getElementById('charWeapon').innerHTML='Weapon: ' + character.weapon;
-
-//SHOWING DIVS
+	
+	//SHOWING DIVS
 	showDiv('start');
 	showDiv('charStats');
 	document.title = 'The Legacy of Hero';

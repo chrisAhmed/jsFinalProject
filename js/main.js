@@ -79,6 +79,7 @@ function backstoryAlert() {
 	document.getElementById('charHP').innerHTML='Health: ' + character.hp;
 	document.getElementById('charWeapon').innerHTML='Weapon: ' + character.weapon;
 	document.getElementById('charFood').innerHTML='Food: ' + character.food;	
+	document.getElementById('charAttack').innerHTML='Attack: ' + character.attack;
 	
 	//SHOWING DIVS
 	showDiv('start');
@@ -240,4 +241,14 @@ function removeFood(amt){
 function addFood(amt){
 	character.food=character.food+amt;
 	document.getElementById('charFood').innerHTML='Food: ' + character.food;
+}
+
+
+//THESE FUNCTIONS ADD ATTACK POINTS
+
+function addAttack(amt){
+	if (character.attack<10){
+		character.attack=character.attack+amt;
+		document.getElementById('charAttack').innerHTML='Attack: ' + character.attack;
+	}
 }

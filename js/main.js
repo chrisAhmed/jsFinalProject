@@ -242,22 +242,29 @@ function battleCheck(){
 
 //THESE FUNCTIONS ADD OR REMOVE HP
 function removeHP(amt){
-	if (character.hp>1){
+	if (character.hp-amt>0){
 		character.hp=character.hp-amt;
+		document.getElementById('charHP').innerHTML='Health: ' + character.hp;
 	}
 	else {
-		character.hp=character.hp-amt;
+		character.hp=0;
+		document.getElementById('charHP').innerHTML='Health: ' + character.hp;
 		alert('You died!');
 	}
 	
-	document.getElementById('charHP').innerHTML=character.hp;
 }
 
 function addHP(amt){
 	if (character.hp<16){
-		character.hp=character.hp+amt;
+		if (character.hp+amt<=15){
+			character.hp=character.hp+amt;
+			document.getElementById('charHP').innerHTML='Health: ' + character.hp;
+		}
+		else if (character.hp+amt>15){
+			character.hp=15;
+			document.getElementById('charHP').innerHTML='Health: ' + character.hp;
+		}
 	}
-	document.getElementById('charHP').innerHTML=character.hp;
 }
 
 
@@ -279,7 +286,13 @@ function addFood(amt){
 
 function addAttack(amt){
 	if (character.attack<10){
-		character.attack=character.attack+amt;
-		document.getElementById('charAttack').innerHTML='Attack: ' + character.attack;
+		if (character.attack+amt<=10){
+			character.attack=character.attack+amt;
+			document.getElementById('charAttack').innerHTML='Attack: ' + character.attack;
+		}
+		else if (character.attack+amt>10){
+			character.attack=10;
+			document.getElementById('charAttack').innerHTML='Attack: ' + character.attack;
+		}
 	}
 }

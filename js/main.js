@@ -78,6 +78,7 @@ function backstoryAlert() {
 	//INITIALIZING CHARACTER STATS
 	document.getElementById('charHP').innerHTML='Health: ' + character.hp;
 	document.getElementById('charWeapon').innerHTML='Weapon: ' + character.weapon;
+	document.getElementById('charFood').innerHTML='Food: ' + character.food;	
 	
 	//SHOWING DIVS
 	showDiv('start');
@@ -225,4 +226,18 @@ function addHP(amt){
 		character.hp=character.hp+amt;
 	}
 	document.getElementById('charHP').innerHTML=character.hp;
+}
+
+
+//THESE FUNCTIONS ADD OR REMOVE CHAR.FOOD
+function removeFood(amt){
+	if (character.food>=1){
+		character.food=character.food-amt;
+		document.getElementById('charFood').innerHTML='Food: ' + character.food;
+	}
+}
+
+function addFood(amt){
+	character.food=character.food+amt;
+	document.getElementById('charFood').innerHTML='Food: ' + character.food;
 }

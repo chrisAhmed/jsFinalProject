@@ -98,13 +98,16 @@ the list of coordinates in the array.
 If the co-ordinates do match up, continue with moving on.
 The the co-ordinates do not match up, stop the function and prompt the 
 player that they are unable to move that way.*/
+ var mapCords = new Array();
+ var tempX = 0;
+ var tempY = 0;
 function mapImage(){
 	document.getElementById('gameMap').src='images/maps/' + xCord + 'x' + yCord + '.png';
+	tempX = xCord;
+	tempY = yCord;
 }
 //Setting up button movement for game.
 function moveUp(){
-	tempX = yCord;
-	tempY = xCord;
 	tempY+=1;
 	if(imageExist() === true)
 	{
@@ -118,8 +121,6 @@ function moveUp(){
 	}
 }
 function moveDown(){
-	tempX = yCord;
-	tempY = xCord;
 	tempY-=1;
 	if(imageExist() === true)
 	{
@@ -134,9 +135,7 @@ function moveDown(){
 
 }
 function moveLeft(){
-	tempX = yCord;
-	tempY = xCord;
-	tempX -=1;
+	tempX-=1;
 	if(imageExist() === true)
 	{
 		alert("You're moving on");
@@ -150,8 +149,6 @@ function moveLeft(){
 
 }
 function moveRight(){
-	tempX = yCord;
-	tempY = xCord;
 	tempX+=1;
 	if(imageExist() === true)
 	{
@@ -165,12 +162,24 @@ function moveRight(){
 	}
 }
 
-//Maps coordinates of map images into an array for future calculations.
-//This is very long indeed due to the fact that there are 28 different map images
-//the player could walk to.
-//This map is formed to a  backwards L shape to give it some 'worldly' formation.
-//The "//" next to the array number indicates the image has not been made yet.
-var mapCords = new Array();
+//compares map coordinates to let player know they can not go that way.
+function imageExist() 
+{
+	cord = tempX + 'x' + tempY;
+	for(var i = 0; i < mapCords.length; i++)
+	{
+		if(cord === mapCords[i])
+		{
+			return true;
+			break;
+		}
+	} 
+	return false;
+}
+/*Maps coordinates of map images into an array for future calculations.
+This is very long indeed due to the fact that there are 28 different map images
+the player could walk to.
+This map is formed to a  backwards L shape to give it some 'worldly' formation.*/
 
 function cordMapping(){
 	mapCords[1] = "0x0";
@@ -201,21 +210,6 @@ function cordMapping(){
 	mapCords[26] = "1x-2"; 
 	mapCords[27] = "2x-1";
 	mapCords[28] = "2x-2"; 
-}
-//compares map coordinates to let player know they can not go that way.
-function imageExist() 
-{
-	cord = tempX + 'x' + tempY;
-	for(var i = 0; i < mapCords.length; i++)
-	{
-		if(cord === mapCords[i])
-		{
-			return true;
-			break;
-		}
-	} 
-	return false;
-
 }
 
 //THESE FUNCTIONS ADD OR REMOVE HP

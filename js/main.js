@@ -43,13 +43,16 @@ function charImgswitch(gender) {
 	document.getElementById('charImg').src='images/charSheets/heroIcons/hero'+ gender + 'icon.png';
 }
 
-var Monster = function(name,hp,attack,weapon){
+//creating monster datatype/classes
+var Monster = function(name,hp,attack,weapon,food){
 	this.name = name;
 	this.hp = hp;
 	this.attack = attack;
 	this.weapon = weapon;
+	this.food = food;
 }
 var monsters = new Array();
+//monster.push (new Monster('monster1',25,15,'maul',1);
 
 //THIS FUNCTION IS FOR SHOWING ALL THE BACKSTORY STUFFS
 function backstoryAlert() {
@@ -96,8 +99,6 @@ function backstoryAlert() {
 }
 
 /*THESE FUNCTIONS MOVE THE MAP 
-TO DO: NEED TO MAKE THEM STOP AT A CERTAIN POINT
-Create array of map coordinates *DONE*
 When the user clicks a button, compare what the co-ordinates would be to
 the list of coordinates in the array.
 If the co-ordinates do match up, continue with moving on.
@@ -175,6 +176,7 @@ function imageExist()
 	{
 		if(cord === mapCords[i])
 		{
+			battleCheck();
 			return true;
 			break;
 		}
@@ -215,6 +217,27 @@ function cordMapping(){
 	mapCords[26] = "1x-2"; 
 	mapCords[27] = "2x-1";
 	mapCords[28] = "2x-2"; 
+}
+
+function battleCheck(){
+	switch(cord)
+	{
+	case '0x3':
+		alert('BATTLE TIME DUN DUN DUN');
+		break;
+	case '0x-3':
+		alert('BATTLE TIME DUN DUN DUN');
+	break;
+	case '3x0':
+		alert('BATTLE TIME DUN DUN DUN');
+		break;
+	case '-6x0':
+		alert('BATTLE TIME DUN DUN DUN');
+		break;
+	default:
+		alert('There is no battle');
+		break;
+	}
 }
 
 //THESE FUNCTIONS ADD OR REMOVE HP

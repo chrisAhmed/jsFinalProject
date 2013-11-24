@@ -8,18 +8,27 @@
 .overHERO
 {
 	position:absolute;
-	left:475px;
-	top:260px;
+	/*left:475px;
+	top:260px;*/
+	left:50%;
+	top:25%;
 	z-index:-1;
 }
 .overNPC
 {
 	position:absolute;
-	left:525px;
-	top:445px;
+	left:55%;
+	top:45%;
 	z-index:-1;
 }
-.hideNPC
+.overButton
+{
+	position:absolute;
+	left:53%;
+	top:39%;
+	z-index:1;
+}
+.hide
 {
 	position:absolute;
 	display:none;

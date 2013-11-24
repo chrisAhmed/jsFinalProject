@@ -205,11 +205,15 @@ function checkNPCloc()
 	{
 		obj=document.getElementById('npc');
 		obj.className = 'overNPC';
+		obj=document.getElementById('shopButton');
+		obj.className = 'overButton';
 	}
 	else
 	{
 		obj=document.getElementById('npc');
-		obj.className = 'hideNPC';
+		obj.className = 'hide';
+		obj=document.getElementById('shopButton');
+		obj.className = 'hide';
 	}
 }
 /*Maps coordinates of map images into an array for future calculations.

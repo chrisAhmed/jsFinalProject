@@ -68,12 +68,16 @@ function backstoryAlert() {
 		objPro="him";
 		perProC="He";
 		objProC="Him";
+		context="M";
+		document.getElementById('hero').src = 'images/charSheets/heroIcons/hero' + context + 'icon.png';
 		}
 	else {
 		perPro="she";
 		objPro="her";
 		perProC="She";
-		objProC="Her";	
+		objProC="Her";
+		context="F";
+		document.getElementById('her').src = 'images/charSheets/heroIcons/hero' + context + 'icon.png';
 	}
 
 	alert('There once was a town by the name of Aldshore. It was a peaceful town until....');
@@ -123,7 +127,7 @@ function moveUp(){
 		yCord+=1;
 		mapImage();
 		checkNPCloc();
-		document.getElementById("hero").src = 'images/charSheets/heroIcons/heroFup.png';
+		document.getElementById("hero").src = 'images/charSheets/heroIcons/hero' + context + 'up.png';
 	}
 	else
 	{
@@ -138,7 +142,7 @@ function moveDown(){
 		yCord-=1;	
 		mapImage();
 		checkNPCloc();
-		document.getElementById("hero").src = 'images/charSheets/heroIcons/heroFicon.png';
+		document.getElementById("hero").src = 'images/charSheets/heroIcons/hero' + context + 'icon.png';
 	}
 	else
 	{
@@ -154,7 +158,7 @@ function moveLeft(){
 		xCord-=1;
 		mapImage();
 		checkNPCloc();
-		document.getElementById("hero").src = 'images/charSheets/heroIcons/heroFleft.png';
+		document.getElementById("hero").src = 'images/charSheets/heroIcons/hero' + context + 'left.png';
 	}
 	else
 	{
@@ -170,7 +174,7 @@ function moveRight(){
 		xCord+=1;
 		mapImage();
 		checkNPCloc();
-		document.getElementById("hero").src = 'images/charSheets/heroIcons/heroFright.png';
+		document.getElementById("hero").src = 'images/charSheets/heroIcons/hero' + context + 'right.png';
 	}
 	else
 	{

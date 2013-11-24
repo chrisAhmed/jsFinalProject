@@ -1,2 +1,8 @@
 http://www.w3schools.com/jsref/met_loc_replace.asp
 http://www.w3schools.com/jsref/met_win_open.asp
+
+
+open a fixed position window:
+<button onclick="window.open('shop.html', 'shop', 'width=500, height=400, scrollbars=0,
+	 left=0, top=100, screenX=0, screenY=100')"
+	 id="shopButton" class="hide">Shop</button> -->

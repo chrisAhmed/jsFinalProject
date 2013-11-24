@@ -332,5 +332,7 @@ function battleCheck(){
 		}
 	}
 	
-	
+function addMoney(){
+	alert("money" + character.money + " mmmmm");
+}	
 //THESE FUNCTIONS WILL BE USED FOR NPC\VILLAGE INTERACTIONS

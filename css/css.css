@@ -5,10 +5,22 @@
 	top:0px;
 	z-index:-1;
 }		
-.over
+.overHERO
 {
 	position:absolute;
 	left:475px;
 	top:260px;
 	z-index:-1;
+}
+.overNPC
+{
+	position:absolute;
+	left:525px;
+	top:445px;
+	z-index:-1;
+}
+.hideNPC
+{
+	position:absolute;
+	display:none;
 }

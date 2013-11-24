@@ -119,10 +119,11 @@ function moveUp(){
 	tempY+=1;
 	if(imageExist())
 	{
-		alert("You're moving on");
+		//alert("You're moving on");
 		yCord+=1;
 		mapImage();
-		document.getElementById("hero").src = 'images/charSheets/heroIcons/heroMup.png';
+		checkNPCloc();
+		document.getElementById("hero").src = 'images/charSheets/heroIcons/heroFup.png';
 	}
 	else
 	{
@@ -133,10 +134,11 @@ function moveDown(){
 	tempY-=1;
 	if(imageExist())
 	{
-		alert("You're moving on");
+		//alert("You're moving on");
 		yCord-=1;	
 		mapImage();
-		document.getElementById("hero").src = 'images/charSheets/heroIcons/heroMicon.png';
+		checkNPCloc();
+		document.getElementById("hero").src = 'images/charSheets/heroIcons/heroFicon.png';
 	}
 	else
 	{
@@ -148,10 +150,11 @@ function moveLeft(){
 	tempX-=1;
 	if(imageExist())
 	{
-		alert("You're moving on");
+		//alert("You're moving on");
 		xCord-=1;
 		mapImage();
-		document.getElementById("hero").src = 'images/charSheets/heroIcons/heroMleft.png';
+		checkNPCloc();
+		document.getElementById("hero").src = 'images/charSheets/heroIcons/heroFleft.png';
 	}
 	else
 	{
@@ -163,10 +166,11 @@ function moveRight(){
 	tempX+=1;
 	if(imageExist())
 	{
-		alert("You're moving on");
+		//alert("You're moving on");
 		xCord+=1;
 		mapImage();
-		document.getElementById("hero").src = 'images/charSheets/heroIcons/heroMright.png';
+		checkNPCloc();
+		document.getElementById("hero").src = 'images/charSheets/heroIcons/heroFright.png';
 	}
 	else
 	{
@@ -188,6 +192,21 @@ function imageExist()
 		}
 	} 
 	return false;
+}
+
+function checkNPCloc()
+{
+
+	if(cord === "-2x0")
+	{
+		obj=document.getElementById('npc');
+		obj.className = 'overNPC';
+	}
+	else
+	{
+		obj=document.getElementById('npc');
+		obj.className = 'hideNPC';
+	}
 }
 /*Maps coordinates of map images into an array for future calculations.
 This is very long indeed due to the fact that there are 28 different map images
@@ -241,7 +260,7 @@ function battleCheck(){
 		alert('BATTLE TIME DUN DUN DUN');
 		break;
 	default:
-		alert('There is no battle');
+		//alert('There is no battle');
 		break;
 	}
 }

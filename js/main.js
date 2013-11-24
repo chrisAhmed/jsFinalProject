@@ -331,8 +331,10 @@ function battleCheck(){
 			}
 		}
 	}
+
 //THESE FUNCTIONS WILL BE USED FOR NPC\VILLAGE INTERACTIONS
 function openShop(){
+	document.getElementById("heroStore").src = 'images/charSheets/heroIcons/hero' + context + 'up.png';
 	hideDiv('start');
 	showDiv('shop');
 }

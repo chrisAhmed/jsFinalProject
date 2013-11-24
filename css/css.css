@@ -8,8 +8,6 @@
 .overHERO
 {
 	position:absolute;
-	/*left:475px;
-	top:260px;*/
 	left:50%;
 	top:25%;
 	z-index:-1;
@@ -21,11 +19,53 @@
 	top:45%;
 	z-index:-1;
 }
+.npcStore
+{
+	position:absolute;
+	left:48%;
+	top:35%;
+	z-index:-1;
+}
+.heroStore
+{
+	position:absolute;
+	left:48%;
+	top:45%;
+	z-index:-1;
+}
 .overButton
 {
 	position:absolute;
 	left:53%;
 	top:39%;
+	z-index:1;
+}
+.sword1
+{
+	position:absolute;
+	left:25%;
+	top:25%;
+	z-index:1;
+}
+.sword2
+{
+	position:absolute;
+	left:25%;
+	top:50%;
+	z-index:1;
+}
+.sword3
+{
+	position:absolute;
+	left:63%;
+	top:25%;
+	z-index:1;
+}
+.food
+{
+	position:absolute;
+	left:66%;
+	top:50%;
 	z-index:1;
 }
 .hide

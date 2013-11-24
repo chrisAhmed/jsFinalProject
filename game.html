@@ -4,6 +4,7 @@
 	<head>
 		<title>Character Creation Screen</title>
 		<script type="text/javascript" src="js/main.js"></script>
+		<link href="css/css.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
 		<div align=center>
@@ -23,11 +24,13 @@
 				<br>
 				<button onclick="charCreate()">Begin Game</button>
 			</div>
-		
+			
+			<!-- style="position:relative; top:30; left:70;"-->
 			<div id="start" style="display:none;">
-				<!-- This div is where the game begins -->
+				<-- This div is where the game begins -->
 				<h1>The Legacy of Hero</h1>
-				<img id="gameMap" src="images/maps/0x0.png" height="500"><br>
+				<img id="gameMap" src="images/maps/0x0.png" height="500" class="under"><br>
+				<img id="hero" src="images/charSheets/heroIcons/heroFicon.png" class="over">
 				<button onclick="moveLeft()">Move Left</button>
 				<button onclick="moveUp()">Move Up</button>
 				<button onclick="moveDown()">Move Down</button>

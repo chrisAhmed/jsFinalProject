@@ -122,6 +122,7 @@ function moveUp(){
 		alert("You're moving on");
 		yCord+=1;
 		mapImage();
+		document.getElementById("hero").src = 'images/charSheets/heroIcons/heroMup.png';
 	}
 	else
 	{
@@ -135,6 +136,7 @@ function moveDown(){
 		alert("You're moving on");
 		yCord-=1;	
 		mapImage();
+		document.getElementById("hero").src = 'images/charSheets/heroIcons/heroMicon.png';
 	}
 	else
 	{
@@ -149,6 +151,7 @@ function moveLeft(){
 		alert("You're moving on");
 		xCord-=1;
 		mapImage();
+		document.getElementById("hero").src = 'images/charSheets/heroIcons/heroMleft.png';
 	}
 	else
 	{
@@ -163,6 +166,7 @@ function moveRight(){
 		alert("You're moving on");
 		xCord+=1;
 		mapImage();
+		document.getElementById("hero").src = 'images/charSheets/heroIcons/heroMright.png';
 	}
 	else
 	{

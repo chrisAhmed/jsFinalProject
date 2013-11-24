@@ -1,0 +1,14 @@
+.under
+{
+	position:relative;
+	left:0px;
+	top:0px;
+	z-index:-1;
+}		
+.over
+{
+	position:absolute;
+	left:475px;
+	top:260px;
+	z-index:-1;
+}

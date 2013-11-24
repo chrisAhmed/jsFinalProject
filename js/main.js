@@ -25,7 +25,8 @@ function charCreate() {
 	attack:2, //Out of 10
 	hp:10,  //Default
 	weapon:'wooden sword',
-	food:1
+	food:1,
+	money:0,
 	};
 	//setting the gender for the character
 	if(document.getElementById('genderMale').checked) {
@@ -88,6 +89,7 @@ function backstoryAlert() {
 	
 	//INITIALIZING CHARACTER STATS
 	document.getElementById('charHP').innerHTML='Health: ' + character.hp;
+	document.getElementById('charMoney').innerHTML='Money: ' + character.money;	
 	document.getElementById('charWeapon').innerHTML='Weapon: ' + character.weapon;
 	document.getElementById('charFood').innerHTML='Food: ' + character.food;	
 	document.getElementById('charAttack').innerHTML='Attack: ' + character.attack;

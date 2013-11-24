@@ -31,15 +31,22 @@
 				<img id="gameMap" src="images/maps/0x0.png" height="500" class="under"><br>
 				<img id="hero" class="overHERO">
 				<img id="npc" src="images/charSheets/npcIcon.png" class="hide">
-				<button onclick="" id="shopButton" class="hide">Shop</button>
+				<button onclick="openShop()" id="shopButton" class="hide">Shop</button>
 				<button onclick="moveLeft()">Move Left</button>
 				<button onclick="moveUp()">Move Up</button>
 				<button onclick="moveDown()">Move Down</button>
 				<button onclick="moveRight()">Move Right</button><br>	
 			</div>
-			<br>
+			<br><br>
 			
-			<br>
+			<div id="shop" style="display:none;">
+				<!-- shop div -->
+				<h1> Shop </h1>
+				<button onclick="addMoney()">FREE MONEY</button>
+				<button onclick="leaveShop()">Leave the shop</button>
+			</div>
+			
+			<br><br>
 			<div id="charStats" style="display:none;">
 				<!-- This div shows all the various character statistics -->
 				<b>Character Stats:</b><br>

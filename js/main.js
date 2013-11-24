@@ -331,8 +331,16 @@ function battleCheck(){
 			}
 		}
 	}
-	
-function addMoney(){
-	alert("money" + character.money + " mmmmm");
-}	
 //THESE FUNCTIONS WILL BE USED FOR NPC\VILLAGE INTERACTIONS
+function openShop(){
+	hideDiv('start');
+	showDiv('shop');
+}
+function leaveShop(){
+	hideDiv('shop');
+	showDiv('start');
+}
+function addMoney(){
+	character.money++
+	document.getElementById('charMoney').innerHTML='Money: ' + character.money;	
+}

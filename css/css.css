@@ -1,37 +1,37 @@
 .under
 {
 	position:relative;
-	left:0px;
-	top:0px;
+	left:0%;
+	top:0%;
 	z-index:-1;
-}		
+}
 .overHERO
 {
 	position:absolute;
 	left:50%;
 	top:25%;
-	z-index:-1;
+	z-index:1;
 }
 .overNPC
 {
 	position:absolute;
 	left:55%;
 	top:45%;
-	z-index:-1;
+	z-index:1;
 }
 .npcStore
 {
 	position:absolute;
 	left:48%;
 	top:35%;
-	z-index:-1;
+	z-index:1;
 }
 .heroStore
 {
 	position:absolute;
 	left:48%;
 	top:45%;
-	z-index:-1;
+	z-index:1;
 }
 .overButton
 {

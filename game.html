@@ -26,16 +26,18 @@
 			</div>
 			
 			<div id="start" style="display:none;">
+				<div style="width:100%;">
 				<!-- This div is where the game begins -->
 				<h1>The Legacy of Hero</h1>
-				<img id="gameMap" src="images/maps/0x0.png" height="500" class="under"><br>
+				<img id="gameMap" src="images/maps/0x0.png" height="500" width="800" class="under"><br>
 				<img id="hero" class="overHERO">
 				<img id="npc" src="images/charSheets/npcIcon.png" class="hide">
 				<button onclick="openShop()" id="shopButton" class="hide">Shop</button>
 				<button onclick="moveLeft()">Move Left</button>
 				<button onclick="moveUp()">Move Up</button>
 				<button onclick="moveDown()">Move Down</button>
-				<button onclick="moveRight()">Move Right</button><br>	
+				<button onclick="moveRight()">Move Right</button><br>
+				</div>
 			</div>
 			<br><br>
 			
@@ -45,12 +47,11 @@
 				<img id="storeBG" src="images/maps/storeBG.png" height="500" class ="under">
 				<img id="npc" src="images/charSheets/npcIcon.png" class="npcStore">
 				<img id="heroStore" src="images/charSheets/heroIcons/heroMicon.png" class="heroStore">
-				<button id='sword1B' class="sword1"> Sword 1 (+3 Attack) </button>
-				<button id='sword2B' class="sword2"> Sword 2 (+ 6 Attack) </button>
-				<button id='sword3B' class="sword3"> Sword 3 (+10 Attack) </button>
-				<button id='foodB' class="food"> Food </button>
+				<button id='sword1B' class="sword1" onclick="purchWeap('Kusanagi')"> Kusanagi (+5 Attack) 20 Gold </button>
+				<button id='sword2B' class="sword2" onclick="purchWeap('Glamdring')"> Glamdring (+ 10 Attack) 40 Gold </button>
+				<button id='sword3B' class="sword3" onclick="purchWeap('Anduril')"> Anduril	(+15 Attack) 60 Gold </button>
+				<button id='foodB' class="food" onclick="addFood()"> Food (+3 Health) 5 Gold </button>
 				<br>
-				<button onclick="addMoney()">FREE MONEY</button>
 				<button onclick="randomMoney()">RANDOM MONEY</button>				
 				<button onclick="leaveShop()">Leave the shop</button>
 			</div>

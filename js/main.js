@@ -52,8 +52,22 @@ var Monster = function(name,hp,attack,weapon,food){
 	this.weapon = weapon;
 	this.food = food;
 }
+//creating weapon datatype/classes
+var Weapon = function(name,attack,price){
+	this.name = name;
+	this.attack = attack;
+	this.price = price;
+}
 var monsters = new Array();
-//monster.push (new Monster('monster1',25,15,'maul',1);
+var weapon = new Array();
+	
+//INITIALIZING WEAPONS
+weapon.push(new Weapon('Kusanagi',5,20));
+weapon.push(new Weapon('Glamdring',10,40));
+weapon.push(new Weapon('Anduril',15,60));
+weapon.push(new Weapon('Wooden Sword',2,2));
+	
+
 
 //THIS FUNCTION IS FOR SHOWING ALL THE BACKSTORY STUFFS
 function backstoryAlert() {
@@ -91,6 +105,8 @@ function backstoryAlert() {
 	alert(perProC + ' finds a small hut that managed to defy what destruction happened. Inside ' + perPro + ' finds a wooden sword and some bread.');
 	alert('The adventure begins...');
 	
+	character.weapon = weapon[3].name.value;
+	
 	//INITIALIZING CHARACTER STATS
 	document.getElementById('charHP').innerHTML='Health: ' + character.hp;
 	document.getElementById('charMoney').innerHTML='Money: ' + character.money;	
@@ -102,6 +118,8 @@ function backstoryAlert() {
 	showDiv('start');
 	showDiv('charStats');
 	document.title = 'The Legacy of Hero';
+	
+
 }
 
 /*THESE FUNCTIONS MOVE THE MAP 
@@ -346,11 +364,50 @@ function leaveShop(){
 	hideDiv('shop');
 	showDiv('start');
 }
-function addMoney(){
-	character.money++;
-	document.getElementById('charMoney').innerHTML='Money: ' + character.money;	
+
+function addFood(){
+	if(character.money >= 5){
+		character.food++;
+		character.money-=5;
+		document.getElementById('charFood').innerHTML='Food: ' + character.food;	
+		document.getElementById('charMoney').innerHTML='Money: ' + character.money
+	}else{
+		alert("You do not have enough money!");
+	}
 }
 
+function purchWeap(wep){
+	if(wep === 'Kusanagi' && character.money >= 20)
+	{
+		character.weapon = weapon[0].name.value;
+		character.attack += 5;
+		character.money -= 20;
+		document.getElementById('charWeapon').innerHTML='Weapon: ' + character.weapon;
+		document.getElementById('charAttack').innerHTML='Attack: ' + character.attack;
+		document.getElementById('charMoney').innerHTML='Money: ' + character.money;
+	}
+	else if(wep === 'Glamdring' && character.money >= 40)
+	{
+		character.weapon = weapon[1].name.value;
+		character.attack += 10;
+		character.money -= 40;
+		document.getElementById('charWeapon').innerHTML='Weapon: ' + character.weapon;
+		document.getElementById('charAttack').innerHTML='Attack: ' + character.attack;
+		document.getElementById('charMoney').innerHTML='Money: ' + character.money;
+	}
+	else if(wep === 'Anduril' && character.money >= 60)
+	{
+		character.weapon = weapon[2].name.value;
+		character.attack += 15;
+		character.money -= 60;
+		document.getElementById('charWeapon').innerHTML='Weapon: ' + character.weapon;
+		document.getElementById('charAttack').innerHTML='Attack: ' + character.attack;
+		document.getElementById('charMoney').innerHTML='Money: ' + character.money;	
+	}
+	else{
+		alert('You don\'t have enough money!');
+	}
+}
 
 //THESE FUNCTIONS WILL RANDOMLY GIVE THE PLAYER MONEY OR FOOD WHENEVER THEY MOVE TO A NEW TILE
 function randomMoney(){

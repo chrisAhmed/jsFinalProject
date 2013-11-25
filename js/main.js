@@ -128,6 +128,7 @@ function moveUp(){
 		mapImage();
 		checkNPCloc();
 		document.getElementById("hero").src = 'images/charSheets/heroIcons/hero' + context + 'up.png';
+		randomMoney(); //Adds randomness of finding money in the map like other games		
 	}
 	else
 	{
@@ -143,6 +144,7 @@ function moveDown(){
 		mapImage();
 		checkNPCloc();
 		document.getElementById("hero").src = 'images/charSheets/heroIcons/hero' + context + 'icon.png';
+		randomMoney(); //Adds randomness of finding money in the map like other games		
 	}
 	else
 	{
@@ -159,6 +161,7 @@ function moveLeft(){
 		mapImage();
 		checkNPCloc();
 		document.getElementById("hero").src = 'images/charSheets/heroIcons/hero' + context + 'left.png';
+		randomMoney(); //Adds randomness of finding money in the map like other games	
 	}
 	else
 	{
@@ -175,6 +178,7 @@ function moveRight(){
 		mapImage();
 		checkNPCloc();
 		document.getElementById("hero").src = 'images/charSheets/heroIcons/hero' + context + 'right.png';
+		randomMoney(); //Adds randomness of finding money in the map like other games
 	}
 	else
 	{
@@ -343,6 +347,35 @@ function leaveShop(){
 	showDiv('start');
 }
 function addMoney(){
-	character.money++
+	character.money++;
 	document.getElementById('charMoney').innerHTML='Money: ' + character.money;	
+}
+
+
+//THESE FUNCTIONS WILL RANDOMLY GIVE THE PLAYER MONEY OR FOOD WHENEVER THEY MOVE TO A NEW TILE
+function randomMoney(){
+	var randomNumber=Math.floor(Math.random()*101);
+
+	if (randomNumber>10 && randomNumber<=15){
+		character.money++;
+		alert('You have found 1 piece of money!');
+		}
+	
+	else if (randomNumber>38 && randomNumber<=42){
+		character.money=character.money+2;
+		alert('You have found 2 pieces of money!');		
+		}
+	
+	else if (randomNumber>60 && randomNumber<=63){
+		character.money=character.money+3;
+		alert('You have found 3 pieces of money!');		
+		}
+		
+	else if (randomNumber>95 && randomNumber<=97){
+		character.money=character.money+4;
+		alert('You have found 4 pieces of money!');		
+		}
+		
+	document.getElementById('charMoney').innerHTML='Money: ' + character.money;	
+
 }

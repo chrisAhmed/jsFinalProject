@@ -105,7 +105,7 @@ function backstoryAlert() {
 	alert(perProC + ' finds a small hut that managed to defy what destruction happened. Inside ' + perPro + ' finds a wooden sword and some bread.');
 	alert('The adventure begins...');
 	
-	character.weapon = weapon[3].name.value;
+	character.weapon = weapon[3].name;
 	
 	//INITIALIZING CHARACTER STATS
 	document.getElementById('charHP').innerHTML='Health: ' + character.hp;
@@ -379,7 +379,7 @@ function addFood(){
 function purchWeap(wep){
 	if(wep === 'Kusanagi' && character.money >= 20)
 	{
-		character.weapon = weapon[0].name.value;
+		character.weapon = weapon[0].name;
 		character.attack += 5;
 		character.money -= 20;
 		document.getElementById('charWeapon').innerHTML='Weapon: ' + character.weapon;
@@ -388,7 +388,7 @@ function purchWeap(wep){
 	}
 	else if(wep === 'Glamdring' && character.money >= 40)
 	{
-		character.weapon = weapon[1].name.value;
+		character.weapon = weapon[1].name;
 		character.attack += 10;
 		character.money -= 40;
 		document.getElementById('charWeapon').innerHTML='Weapon: ' + character.weapon;

@@ -91,7 +91,7 @@ function backstoryAlert() {
 		perProC="She";
 		objProC="Her";
 		context="F";
-		document.getElementById('her').src = 'images/charSheets/heroIcons/hero' + context + 'icon.png';
+		document.getElementById('hero').src = 'images/charSheets/heroIcons/hero' + context + 'icon.png';
 	}
 
 	alert('There once was a town by the name of Aldshore. It was a peaceful town until....');

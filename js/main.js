@@ -397,7 +397,7 @@ function purchWeap(wep){
 	}
 	else if(wep === 'Anduril' && character.money >= 60)
 	{
-		character.weapon = weapon[2].name.value;
+		character.weapon = weapon[2].name;
 		character.attack += 15;
 		character.money -= 60;
 		document.getElementById('charWeapon').innerHTML='Weapon: ' + character.weapon;

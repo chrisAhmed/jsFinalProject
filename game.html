@@ -7,7 +7,7 @@
 		<link href="css/css.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
-		<div align=center>
+		<div align=center style="position:relative;">
 		
 			<div id="charCreate">
 				<!-- This div is for character creation -->
@@ -25,7 +25,7 @@
 				<button onclick="charCreate()">Begin Game</button>
 			</div>
 			
-			<div  id="start" style="display:none;">
+			<div id="start" style="display:none;position:relative;">
 				<!-- This div is where the game begins -->
 				<h1>The Legacy of Hero</h1>
 				<div id="map">
@@ -33,7 +33,6 @@
 					<img id="hero" class="overHERO">
 					<img id="npc" src="images/charSheets/npcIcon.png" class="hide">
 					<button onclick="openShop()" id="shopButton" class="hide">Shop</button>
-				<br>
 				</div>
 				<button onclick="moveLeft()">Move Left</button>
 				<button onclick="moveUp()">Move Up</button>

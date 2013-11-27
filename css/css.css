@@ -1,9 +1,9 @@
 .map{
 	position:relative;
-	max-width:1600px;
-	max-height: 1000px;
-	min-width: 0px;
-	min-height: 0px;
+	max-width:1920px;
+	max-height: 1080px;
+	min-width: 256px;
+	min-height: 144px;
 }
 .under
 {
@@ -16,14 +16,16 @@
 {
 	position:absolute;
 	left:50%;
-	top:25%;
+	top:35%;
+	width:5%;
+	height:9%;
 	z-index:1;
 }
 .overNPC
 {
 	position:absolute;
-	left:55%;
-	top:45%;
+	left:56%;
+	top:70%;
 	z-index:1;
 }
 .npcStore
@@ -33,18 +35,18 @@
 	top:35%;
 	z-index:1;
 }
+.overButton
+{
+	position:absolute;
+	left:53%;
+	top:60%;
+	z-index:1;
+}
 .heroStore
 {
 	position:absolute;
 	left:48%;
 	top:45%;
-	z-index:1;
-}
-.overButton
-{
-	position:absolute;
-	left:53%;
-	top:39%;
 	z-index:1;
 }
 .sword1

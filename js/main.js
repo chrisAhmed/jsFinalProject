@@ -434,5 +434,4 @@ function randomMoney(){
 		}
 		
 	document.getElementById('charMoney').innerHTML='Money: ' + character.money;	
-
 }

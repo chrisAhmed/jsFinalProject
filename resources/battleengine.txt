@@ -8,8 +8,7 @@ player and boss have their specified attack level. We do a random
 roll between those attack levels and whoever gets the higher one wins
 that attack and hits the opponent.
 
-Then for actual attack damage dealt it can be a random number
-between, let's say for now, 1 damage to keep it simple since the player only has 10HP
+Then for actual attack damage dealt it can 1 damage to keep it simple since the player only has 10HP
 
 If the player hits 0 life points, 
 they will be spawned at the center of the map and lose their gold

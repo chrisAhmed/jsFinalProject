@@ -41,7 +41,7 @@
 			</div>
 			<br><br>
 			
-			<div id="shop" style="display:none;">
+			<div id="shop" style="display:none; position:relative;">
 				<!-- shop div -->
 				<h1> Shop </h1>
 				<img id="storeBG" src="images/maps/storeBG.png" height="500" class ="under">
@@ -54,6 +54,19 @@
 				<br>
 				<button onclick="leaveShop()">Leave the shop</button>
 			</div>
+			
+			<div id="battle" style="display:none; position:relative;">
+				<h1> Boss Battle <h1>
+				<div id="map">
+					<img id="gameMap" class="under">
+					<img id="hero" class="overHERO">
+					<img id="boss" class="hide">
+				</div>
+				<button id="Attack">Attack!</button>
+				<button id="Heal">Heal!</button>
+				<button id="Retreat">Retreat!</button>
+			</div>
+			
 			
 			<br><br>
 			<div id="charStats" style="display:none;">
@@ -73,19 +86,7 @@
 				
 				<div id="charAttack">
 				</div>
-			</div>
-			
-			<div id="battle" style="display:none;">
-			<!-- This div will show battle controls -->
-			</div>
-			
-			<div id="town" style="display:none;">
-			<!-- This div will show any kind of town controls -->
-			<button onclick="npcTalk()">Talk</button>
-			<button onclick="npcShop()">Shop</button>
-				<div id="shop" style="display:none;">
-				</div>
-			</div>
+			</div>			
 		
 		</div>
 	</body>

@@ -323,7 +323,7 @@ function retreat(){
 		document.getElementById('gameMap').src = 'images/maps/2x0.png';	
 		break;
 	case '-6x0':
-		document.getElementById('gameMap').src = 'images/maps/-5x0.png':
+		document.getElementById('gameMap').src = 'images/maps/-5x0.png';
 		break;	
 	default:
 		break;

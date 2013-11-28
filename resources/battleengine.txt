@@ -21,17 +21,21 @@ In terms of our character vs monster. I think we need three scenarios.
 
 Boss 1 
 	10 attack
-	hp?
+	hp = 10
 
 Boss 2
 	15 attack
-	hp?
+	hp = 12
 
 Boss 3
 	20 attack
-	hp?
+	hp = 17
 
 Boss 4
 
 	25 attack
-	hp?
+	hp = 23
+
+There will be no set way to defeat the first 3 bosses, the player can do whenever
+
+We will let the player know which one is hard/ medium/ easy though

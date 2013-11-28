@@ -12,6 +12,11 @@
 	width:100%;
 	height:100%;
 }
+.hide
+{
+	position:absolute;
+	display:none;
+}
 .overHERO
 {
 	position:absolute;
@@ -39,7 +44,7 @@
 {
 	position:absolute;
 	left:48%;
-	top:35%;
+	top:30%;
 	z-index:1;
 }
 .overButton
@@ -59,33 +64,28 @@
 .sword1
 {
 	position:absolute;
-	left:25%;
-	top:25%;
+	left:15%;
+	top:27%;
 	z-index:1;
 }
 .sword2
 {
 	position:absolute;
-	left:25%;
-	top:50%;
+	left:15%;
+	top:70%;
 	z-index:1;
 }
 .sword3
 {
 	position:absolute;
 	left:63%;
-	top:25%;
+	top:27%;
 	z-index:1;
 }
 .food
 {
 	position:absolute;
 	left:66%;
-	top:50%;
+	top:70%;
 	z-index:1;
-}
-.hide
-{
-	position:absolute;
-	display:none;
 }

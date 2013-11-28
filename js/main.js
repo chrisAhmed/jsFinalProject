@@ -307,7 +307,28 @@ function initBattle(){
 	document.getElementById('mapBattle').src = 'images/maps/' + cord +'.png';
 	document.getElementById('heroBattle').src = 'images/charSheets/heroIcons/hero' + context + 'right.png';
 	showDiv('battle');
+}
 
+function retreat(){
+	hideDiv('battle');
+	switch(cord)
+	{
+	case '0x3':
+		document.getElementById('gameMap').src = 'images/maps/0x2.png';
+		break;
+	case '0x-3':
+		document.getElementById('gameMap').src = 'images/maps/0x-2.png';
+		break;
+	case '3x0':
+		document.getElementById('gameMap').src = 'images/maps/2x0.png';	
+		break;
+	case '-6x0':
+		document.getElementById('gameMap').src = 'images/maps/-5x0.png':
+		break;	
+	default:
+		break;
+	}
+	showDiv('start');
 }
 
 //THESE FUNCTIONS AR DEDICATED TO CHARACTER STAT FUNCTIONS

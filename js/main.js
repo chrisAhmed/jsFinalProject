@@ -22,7 +22,7 @@ function charCreate() {
 	character={
 	name:'',
 	gender:'',
-	attack:2, //Out of 10
+	attack:5
 	hp:10,  //Default
 	weapon:'wooden sword',
 	food:1,

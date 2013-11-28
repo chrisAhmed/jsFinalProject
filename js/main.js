@@ -229,6 +229,8 @@ function checkNPCloc()
 		obj.className = 'overNPC';
 		obj=document.getElementById('shopButton');
 		obj.className = 'overButton';
+		obj=document.getElementById('talkShop');
+		obj.className = 'npcStoreTalk';		
 	}
 	else
 	{
@@ -363,6 +365,11 @@ function openShop(){
 function leaveShop(){
 	hideDiv('shop');
 	showDiv('start');
+}
+function talkNPC(name){
+	if (name='shopkeeer'){
+		alert('You can buy weapons and food at this shop here to increase your stats!');
+	}
 }
 
 function addFood(){

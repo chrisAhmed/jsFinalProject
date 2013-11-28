@@ -47,6 +47,13 @@
 	top:30%;
 	z-index:1;
 }
+.npcStoreTalk
+{
+	position:absolute;
+	left:56%;
+	top:77%;
+	z-index:1;
+}
 .overButton
 {
 	position:absolute;

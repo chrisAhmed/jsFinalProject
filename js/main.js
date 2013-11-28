@@ -281,20 +281,31 @@ function battleCheck(){
 	{
 	case '0x3':
 		alert('BATTLE TIME DUN DUN DUN');
+		initBattle();
 		break;
 	case '0x-3':
 		alert('BATTLE TIME DUN DUN DUN');
-	break;
+		initBattle();
+		break;
 	case '3x0':
 		alert('BATTLE TIME DUN DUN DUN');
+		initBattle();
 		break;
 	case '-6x0':
 		alert('BATTLE TIME DUN DUN DUN');
+		initBattle();
 		break;
 	default:
-		//alert('There is no battle');
 		break;
 	}
+}
+
+function initBattle(){
+	hideDiv('start');
+	document.getElementById('mapBattle').src = 'images/maps/' + cord +'.png';
+	document.getElementById('heroBattle').src = 'images/charSheets/heroIcons/hero' + context + 'right.png';
+	showDiv('battle');
+
 }
 
 //THESE FUNCTIONS AR DEDICATED TO CHARACTER STAT FUNCTIONS

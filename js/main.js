@@ -238,6 +238,8 @@ function checkNPCloc()
 		obj.className = 'hide';
 		obj=document.getElementById('shopButton');
 		obj.className = 'hide';
+		obj=document.getElementById('talkShop');
+		obj.className = 'hide';			
 	}
 }
 /*Maps coordinates of map images into an array for future calculations.
@@ -379,7 +381,7 @@ function leaveShop(){
 }
 function talkNPC(name){
 	if (name='shopkeeer'){
-		alert('You can buy weapons and food at this shop here to increase your stats!');
+		alert('You can buy weapons and food at this shop to increase your stats!');
 	}
 }
 

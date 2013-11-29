@@ -232,6 +232,34 @@ function checkNPCloc()
 		obj=document.getElementById('talkShop');
 		obj.className = 'npcStoreTalk';		
 	}
+	else if(cord === "0x-2")
+	{
+		obj=document.getElementById('npc');
+		obj.className = 'npcBoss0x-2';
+		obj=document.getElementById('talkBoss0x-2');
+		obj.className = 'npcBoss0x-2Talk';		
+	}	
+	else if(cord === "0x2")
+	{
+		obj=document.getElementById('npc');
+		obj.className = 'npcBoss0x2';
+		obj=document.getElementById('talkBoss0x2');
+		obj.className = 'npcBoss0x2Talk';		
+	}		
+	else if(cord === "2x0")
+	{
+		obj=document.getElementById('npc');
+		obj.className = 'npcBoss2x0';
+		obj=document.getElementById('talkBoss2x0');
+		obj.className = 'npcBoss2x0Talk';		
+	}
+	else if(cord === "-5x0")
+	{
+		obj=document.getElementById('npc');
+		obj.className = 'npcBoss-5x0';
+		obj=document.getElementById('talkBoss-5x0');
+		obj.className = 'npcBoss-5x0Talk';		
+	}				
 	else
 	{
 		obj=document.getElementById('npc');
@@ -239,6 +267,12 @@ function checkNPCloc()
 		obj=document.getElementById('shopButton');
 		obj.className = 'hide';
 		obj=document.getElementById('talkShop');
+		obj.className = 'hide';
+		obj=document.getElementById('talkBoss0x-2');
+		obj.className = 'hide';			
+		obj=document.getElementById('talkBoss2x0');
+		obj.className = 'hide';						
+		obj=document.getElementById('talkBoss-5x0');
 		obj.className = 'hide';			
 	}
 }
@@ -401,9 +435,21 @@ function leaveShop(){
 	showDiv('start');
 }
 function talkNPC(name){
-	if (name='shopkeeer'){
+	if (name==='shopkeeer'){
 		alert('You can buy weapons and food at this shop to increase your stats!');
 	}
+	else if (name==='boss0x2NPC'){
+		alert('This boss is LEVEL HERE! Your attack level is ' + character.attack + '. Be prepared before entering.');
+	}		
+	else if (name==='boss0x-2NPC'){
+		alert('This boss is LEVEL HERE! Your attack level is ' + character.attack + '. Be prepared before entering.');
+	}			
+	else if (name==='boss2x0NPC'){
+		alert('This boss is LEVEL HERE! Your attack level is ' + character.attack + '. Be prepared before entering.');
+	}
+	else if (name==='boss-5x0NPC'){
+		alert('This boss is LEVEL HERE! Your attack level is ' + character.attack + '. Be prepared before entering.');
+	}	
 }
 
 function addFood(){

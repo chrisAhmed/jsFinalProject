@@ -96,3 +96,59 @@
 	top:70%;
 	z-index:1;
 }
+.npcBoss0x-2
+{
+	position:absolute;
+	left:57%;
+	top:37%;
+	z-index:1;
+}
+.npcBoss0x-2Talk
+{
+	position:absolute;
+	left:57%;
+	top:44%;
+	z-index:1;
+}
+.npcBoss0x2
+{
+	position:absolute;
+	left:57%;
+	top:60%;
+	z-index:1;
+}
+.npcBoss0x2Talk
+{
+	position:absolute;
+	left:57%;
+	top:67%;
+	z-index:1;
+}
+.npcBoss2x0
+{
+	position:absolute;
+	left:88%;
+	top:50%;
+	z-index:1;
+}
+.npcBoss2x0Talk
+{
+	position:absolute;
+	left:88%;
+	top:58%;
+	z-index:1;
+}
+.npcBoss-5x0
+{
+	position:absolute;
+	left:57%;
+	top:37%;
+	z-index:1;
+}
+.npcBoss-5x0Talk
+{
+	position:absolute;
+	left:57%;
+	top:44%;
+	z-index:1;
+}

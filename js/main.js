@@ -269,7 +269,9 @@ function checkNPCloc()
 		obj=document.getElementById('talkShop');
 		obj.className = 'hide';
 		obj=document.getElementById('talkBoss0x-2');
-		obj.className = 'hide';			
+		obj.className = 'hide';
+		obj=document.getElementById('talkBoss0x2');
+		obj.className = 'hide';							
 		obj=document.getElementById('talkBoss2x0');
 		obj.className = 'hide';						
 		obj=document.getElementById('talkBoss-5x0');

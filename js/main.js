@@ -68,8 +68,15 @@ var Weapon = function(name,attack,price){
 	this.attack = attack;
 	this.price = price;
 }
-var monsters = new Array();
+var monster = new Array();
 var weapon = new Array();
+	
+
+//INITIALIZING MONSTERS
+monster.push(new Monster('Shao Kahn',8,6,'Brahadur',1));
+monster.push(new Monster('Dymen Rangor',9,11,'Sangre',2));
+monster.push(new Monster('Telvyr Dwenfy',11,17,'Joyeuse',3));
+monster.push(new Monster('Sauro Vicar',15,23,'Malveillant',4));
 	
 //INITIALIZING WEAPONS
 weapon.push(new Weapon('Kusanagi',5,20));
@@ -77,7 +84,6 @@ weapon.push(new Weapon('Glamdring',10,40));
 weapon.push(new Weapon('Anduril',15,60));
 weapon.push(new Weapon('Wooden Sword',2,2));
 	
-
 
 //THIS FUNCTION IS FOR SHOWING ALL THE BACKSTORY STUFFS
 function backstoryAlert() {
@@ -288,6 +294,7 @@ function checkNPCloc()
 		obj.className = 'hide';			
 	}
 }
+
 /*Maps coordinates of map images into an array for future calculations.
 This is very long indeed due to the fact that there are 28 different map images
 the player could walk to.
@@ -325,28 +332,33 @@ function cordMapping(){
 }
 
 function battleCheck(){
-	bossPic = "";
+	var bossPic = "";
+	boss = 0;
 	switch(cord)
 	{
 	case '0x3':
 		alert('BATTLE TIME DUN DUN DUN');
 		bossPic = "boss2Battle";
+		boss = 1;
 		initBattle(bossPic);
 		break;
 	case '0x-3':
 		alert('BATTLE TIME DUN DUN DUN');
 		bossPic = "boss1Battle";
+		boss = 0;
 		initBattle(bossPic);
 		break;
 	case '3x0':
 		alert('BATTLE TIME DUN DUN DUN');
-		initBattle(bossPic);
 		bossPic = "boss3Battle";
+		boss = 2;
+		initBattle(bossPic);
 		break;
 	case '-6x0':
 		alert('BATTLE TIME DUN DUN DUN');
-		initBattle(bossPic);
 		bossPic = "boss5Battle";
+		boss = 4;
+		initBattle(bossPic);
 		break;
 	default:
 		break;
@@ -356,14 +368,20 @@ function battleCheck(){
 function initBattle(pic){
 	hideDiv('start');
 	document.getElementById('mapBattle').src = 'images/maps/' + cord +'.png';
+	document.getElementById('boss').src =   'images/charSheets/boss/' + pic + '.png';	
 	document.getElementById('heroBattle').src = 'images/charSheets/heroIcons/hero' + context + 'right.png';
 	obj=document.getElementById('heroBattle');
 	obj.className = 'overHEROb';
-	document.getElementById('boss').src =   'images/charSheets/boss/' + pic + '.png';
 	showDiv('battle');
+	alert('You are battling ' + monster[boss].name + '. It\'s wielding a ' + monster[boss].weapon + '. Better watch out!');
 }
 
-//TO DO: RESET THE CORDINATE CHECK VARIABLES TO STOP THE GLITCH
+function attack(){
+	alert('You are attacking!');
+}
+
+function heal(){}
+
 function retreat(){
 	hideDiv('battle');
 	switch(cord)

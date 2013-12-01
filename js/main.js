@@ -357,7 +357,7 @@ function battleCheck(){
 	case '-6x0':
 		alert('BATTLE TIME DUN DUN DUN');
 		bossPic = "boss5Battle";
-		boss = 4;
+		boss = 3;
 		initBattle(bossPic);
 		break;
 	default:

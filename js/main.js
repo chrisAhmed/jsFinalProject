@@ -491,7 +491,7 @@ function talkNPC(name){
 		alert('This boss is LEVEL HERE! Your attack level is ' + character.attack + '. Be prepared before entering.');
 	}			
 	else if (name==='boss2x0NPC'){
-		alert('This boss is LEVEL HERE! Your attack level is ' + character.attack + '. Be prepared before entering.');
+		alert('This boss is named Dymen Rangor. His level is LEVEL HERE! Your attack level is ' + character.attack + '. Be prepared before entering.');
 	}
 	else if (name==='boss-5x0NPC'){
 		alert('This boss is LEVEL HERE! Your attack level is ' + character.attack + '. Be prepared before entering.');

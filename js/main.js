@@ -504,22 +504,22 @@ function randomMoney(){
 
 	if (randomNumber>10 && randomNumber<=15){
 		character.money++;
-		alert('You have found 1 piece of money!');
+		alert('You have found 1 piece of money on the ground!');
 		}
 	
 	else if (randomNumber>38 && randomNumber<=42){
 		character.money=character.money+2;
-		alert('You have found 2 pieces of money!');		
+		alert('You have found 2 pieces of money on the ground!!');		
 		}
 	
 	else if (randomNumber>60 && randomNumber<=63){
 		character.money=character.money+3;
-		alert('You have found 3 pieces of money!');		
+		alert('You have found 3 pieces of money on the ground!!!!');		
 		}
 		
 	else if (randomNumber>95 && randomNumber<=97){
 		character.money=character.money+4;
-		alert('You have found 4 pieces of money!');		
+		alert('You have found 4 pieces of money on the ground!!!!');		
 		}
 		
 	document.getElementById('charMoney').innerHTML='Money: ' + character.money;	

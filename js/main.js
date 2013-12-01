@@ -446,7 +446,7 @@ function leaveShop(){
 	showDiv('start');
 }
 function talkNPC(name){
-	if (name==='shopkeeer'){
+	if (name==='shopNPC'){
 		alert('You can buy weapons and food at this shop to increase your stats!');
 	}
 	else if (name==='boss0x2NPC'){

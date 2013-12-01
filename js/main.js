@@ -24,10 +24,19 @@ function openHelp(){
 function closeWindow(){
 	window.close();
 	}
+	
+//CHANGES MUSIC
+function changeMusic(file){
+	var audio = document.getElementById('gameAudio');
+	var source = document.getElementById('gameAudioSrc')
+	source.src=file;
+	audio.load();
+	}
 
 //THESE FUNCTIONS ARE FOR CHARACTER CREATION
 function charCreate() {
 	hideDiv("charCreate");
+	
 	//This function is what records the user's responses to name and gender and begins game	
 	character={
 	name:'',
@@ -87,6 +96,10 @@ weapon.push(new Weapon('Wooden Sword',2,2));
 
 //THIS FUNCTION IS FOR SHOWING ALL THE BACKSTORY STUFFS
 function backstoryAlert() {
+
+	//CHANGING MUSIC
+	//changeMusic('audio/hyrule.ogg');   //CANT GET THIS TO PLAY FOR SOME REASON
+	
 	//HE\SHE is personal pronoun (perPro), and HIM\HER is objective pronoun (objPro)
 	//Setting Coordinate Variables
 	xCord=0;
@@ -108,7 +121,7 @@ function backstoryAlert() {
 		objProC="Her";
 		context="F";
 		document.getElementById('hero').src = 'images/charSheets/heroIcons/hero' + context + 'icon.png';
-	}
+		}
 
 	alert('There once was a town by the name of Aldshore. It was a peaceful town until....');
 	alert('*EXPLOSIONS*');
@@ -129,6 +142,9 @@ function backstoryAlert() {
 	document.getElementById('charWeapon').innerHTML='Weapon: ' + character.weapon;
 	document.getElementById('charFood').innerHTML='Food: ' + character.food;	
 	document.getElementById('charAttack').innerHTML='Attack: ' + character.attack;
+	
+	//CHANGING MUSIC
+	changeMusic('audio/hyrule.ogg');
 	
 	//SHOWING DIVS
 	showDiv('start');
@@ -367,6 +383,7 @@ function battleCheck(){
 
 function initBattle(pic){
 	hideDiv('start');
+	changeMusic('audio/boss.ogg');
 	document.getElementById('mapBattle').src = 'images/maps/' + cord +'.png';
 	document.getElementById('boss').src =   'images/charSheets/boss/' + pic + '.png';	
 	document.getElementById('heroBattle').src = 'images/charSheets/heroIcons/hero' + context + 'right.png';
@@ -391,6 +408,7 @@ function heal(){}
 
 function retreat(){
 	hideDiv('battle');
+	changeMusic('audio/hyrule.ogg');
 	switch(cord)
 	{
 	case '0x3':
@@ -473,11 +491,13 @@ function retreat(){
 //THESE FUNCTIONS WILL BE USED FOR NPC\VILLAGE INTERACTIONS
 function openShop(){
 	document.getElementById("heroStore").src = 'images/charSheets/heroIcons/hero' + context + 'up.png';
+	changeMusic('audio/Shop.ogg');
 	hideDiv('start');
 	showDiv('shop');
 }
 function leaveShop(){
 	hideDiv('shop');
+	changeMusic('audio/hyrule.ogg');	
 	showDiv('start');
 }
 function talkNPC(name){

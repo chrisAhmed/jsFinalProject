@@ -339,7 +339,7 @@ function battleCheck(){
 	case '0x3':
 		alert('BATTLE TIME DUN DUN DUN');
 		bossPic = "boss2Battle";
-		boss = 1;
+		boss = 2;
 		initBattle(bossPic);
 		break;
 	case '0x-3':
@@ -351,7 +351,7 @@ function battleCheck(){
 	case '3x0':
 		alert('BATTLE TIME DUN DUN DUN');
 		bossPic = "boss3Battle";
-		boss = 2;
+		boss = 1;
 		initBattle(bossPic);
 		break;
 	case '-6x0':
@@ -377,7 +377,14 @@ function initBattle(pic){
 }
 
 function attack(){
-	alert('You are attacking!');
+	var rndPlayer=Math.floor(Math.random()*character.attack);
+	var rndBoss=Math.floor(Math.random()*monster[boss].attack);
+	if(rndPlayer >= rndBoss){
+		alert('Player attacks!');
+	}
+	else{
+		alert('Boss attacks!' + rndBoss + rndPlayer);
+	}
 }
 
 function heal(){}

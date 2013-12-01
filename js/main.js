@@ -320,35 +320,36 @@ function battleCheck(){
 	{
 	case '0x3':
 		alert('BATTLE TIME DUN DUN DUN');
-		bossPic = "/images/charSheets/boss/boss2Battle.png";
-		initBattle();
+		bossPic = "boss2Battle";
+		initBattle(bossPic);
 		break;
 	case '0x-3':
 		alert('BATTLE TIME DUN DUN DUN');
-		bossPic = "/images/charSheets/boss/boss1Battle.png";
-		initBattle();
+		bossPic = "boss1Battle";
+		initBattle(bossPic);
 		break;
 	case '3x0':
 		alert('BATTLE TIME DUN DUN DUN');
-		initBattle();
-		bossPic = "/images/charSheets/boss/boss3Battle.png";
+		initBattle(bossPic);
+		bossPic = "boss3Battle";
 		break;
 	case '-6x0':
 		alert('BATTLE TIME DUN DUN DUN');
-		initBattle();
-		bossPic = "/images/charSheets/boss/boss5Battle.png";
+		initBattle(bossPic);
+		bossPic = "boss5Battle";
 		break;
 	default:
 		break;
 	}
 }
 
-function initBattle(){
+function initBattle(pic){
 	hideDiv('start');
 	document.getElementById('mapBattle').src = 'images/maps/' + cord +'.png';
 	document.getElementById('heroBattle').src = 'images/charSheets/heroIcons/hero' + context + 'right.png';
 	obj=document.getElementById('heroBattle');
 	obj.className = 'overHEROb';
+	document.getElementById('boss').src =   'images/charSheets/boss/' + pic + '.png';
 	showDiv('battle');
 }
 

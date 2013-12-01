@@ -315,23 +315,28 @@ function cordMapping(){
 }
 
 function battleCheck(){
+	bossPic = "";
 	switch(cord)
 	{
 	case '0x3':
 		alert('BATTLE TIME DUN DUN DUN');
+		bossPic = "/images/charSheets/boss/boss2Battle.png";
 		initBattle();
 		break;
 	case '0x-3':
 		alert('BATTLE TIME DUN DUN DUN');
+		bossPic = "/images/charSheets/boss/boss1Battle.png";
 		initBattle();
 		break;
 	case '3x0':
 		alert('BATTLE TIME DUN DUN DUN');
 		initBattle();
+		bossPic = "/images/charSheets/boss/boss3Battle.png";
 		break;
 	case '-6x0':
 		alert('BATTLE TIME DUN DUN DUN');
 		initBattle();
+		bossPic = "/images/charSheets/boss/boss5Battle.png";
 		break;
 	default:
 		break;
@@ -345,6 +350,7 @@ function initBattle(){
 	showDiv('battle');
 }
 
+//TO DO: RESET THE CORDINATE CHECK VARIABLES TO STOP THE GLITCH
 function retreat(){
 	hideDiv('battle');
 	switch(cord)

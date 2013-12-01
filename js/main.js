@@ -356,16 +356,16 @@ function retreat(){
 	switch(cord)
 	{
 	case '0x3':
-		document.getElementById('gameMap').src = 'images/maps/0x2.png';
+		moveDown();
 		break;
 	case '0x-3':
-		document.getElementById('gameMap').src = 'images/maps/0x-2.png';
+		moveUp();
 		break;
 	case '3x0':
-		document.getElementById('gameMap').src = 'images/maps/2x0.png';	
+		moveLeft();	
 		break;
 	case '-6x0':
-		document.getElementById('gameMap').src = 'images/maps/-5x0.png';
+		moveRight();
 		break;	
 	default:
 		break;

@@ -15,6 +15,16 @@ function hideDiv(id) {
 	document.getElementById(id).style.display="none";
 }
 
+//OPENS HELP
+function openHelp(){
+	window.open('help.html','HelpWindow','width=600,height=850');
+	}
+	
+//CLOSES POPUP
+function closeWindow(){
+	window.close();
+	}
+
 //THESE FUNCTIONS ARE FOR CHARACTER CREATION
 function charCreate() {
 	hideDiv("charCreate");

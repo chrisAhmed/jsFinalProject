@@ -30,10 +30,6 @@ Fight: Allows user to fight enemy
 
 Run: Allows user to run away during fight
 
-Drop: Allows user to drop item
-
-Take: Allows user to take previously dropped item
-
 Help: There will also be a help button located, similar to the one on the main page.
 
 Endgame Scenarios:

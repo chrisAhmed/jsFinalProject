@@ -96,6 +96,24 @@
 	top:70%;
 	z-index:1;
 }
+.overHEROb
+{
+	position:absolute;
+	left:35%;
+	top:50%;
+	width:5%;
+	height:9%;
+	z-index:1;
+}
+.bossBattle
+{
+	position:absolute;
+	left:65%;
+	top:50%;
+	width:5%;
+	height:9%;
+	z-index:1;
+}
 .npcBoss0x-2
 {
 	position:absolute;

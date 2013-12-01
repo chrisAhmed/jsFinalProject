@@ -347,6 +347,8 @@ function initBattle(){
 	hideDiv('start');
 	document.getElementById('mapBattle').src = 'images/maps/' + cord +'.png';
 	document.getElementById('heroBattle').src = 'images/charSheets/heroIcons/hero' + context + 'right.png';
+	obj=document.getElementById('heroBattle');
+	obj.className = 'overHEROb';
 	showDiv('battle');
 }
 

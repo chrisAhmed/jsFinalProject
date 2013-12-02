@@ -47,7 +47,7 @@ function charCreate() {
 	weapon:'wooden sword',
 	food:1,
 	money:0,
-	bossCnt:0;
+	bossCnt:0,
 	};
 	//setting the gender for the character
 	if(document.getElementById('genderMale').checked) {

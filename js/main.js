@@ -552,11 +552,13 @@ function openShop(){
 	hideDiv('start');
 	showDiv('shop');
 }
+
 function leaveShop(){
 	hideDiv('shop');
 	changeMusic('audio/hyrule.ogg');	
 	showDiv('start');
 }
+
 function talkNPC(name){
 	if (name==='shopNPC'){
 		alert('You can buy weapons and food at this shop to increase your stats!');

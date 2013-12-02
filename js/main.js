@@ -424,6 +424,7 @@ function battleCheck(){
 		}
 		else{
 			alert('You need to defeat all 3 bosses before the final fight');
+			moveRight();
 		}
 		break;
 	default:

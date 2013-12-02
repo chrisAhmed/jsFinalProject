@@ -41,7 +41,7 @@ function charCreate() {
 	character={
 	name:'',
 	gender:'',
-	attack:5,
+	attack:10,
 	hp:10,  //Default
 	weapon:'wooden sword',
 	food:1,
@@ -64,12 +64,14 @@ function charImgswitch(gender) {
 }
 
 //creating monster datatype/classes
-var Monster = function(name,hp,attack,weapon,food){
+var Monster = function(name,hp,maxHP,attack,weapon,food,money){
 	this.name = name;
 	this.hp = hp;
+	this.maxHP = maxHP;
 	this.attack = attack;
 	this.weapon = weapon;
 	this.food = food;
+	this.money = money;
 }
 //creating weapon datatype/classes
 var Weapon = function(name,attack,price){
@@ -78,23 +80,19 @@ var Weapon = function(name,attack,price){
 	this.price = price;
 }
 var monster = new Array();
-var weapon = new Array();
-	
-
+var weapon = new Array();	
 //INITIALIZING MONSTERS
-monster.push(new Monster('Shao Kahn',8,6,'Brahadur',1));
-monster.push(new Monster('Dymen Rangor',9,11,'Sangre',2));
-monster.push(new Monster('Telvyr Dwenfy',11,17,'Joyeuse',3));
-monster.push(new Monster('Sauro Vicar',15,23,'Malveillant',4));
-	
+monster.push(new Monster('Shao Kahn',8,8,6,'Brahadur',1,10));
+monster.push(new Monster('Dymen Rangor',9,9,11,'Sangre',2,15));
+monster.push(new Monster('Telvyr Dwenfy',11,11,17,'Joyeuse',3,20));
+monster.push(new Monster('Sauro Vicar',15,15,23,'Malveillant',4,50));
 //INITIALIZING WEAPONS
 weapon.push(new Weapon('Kusanagi',5,20));
 weapon.push(new Weapon('Glamdring',10,40));
 weapon.push(new Weapon('Anduril',15,60));
 weapon.push(new Weapon('Wooden Sword',2,2));
 	
-
-//THIS FUNCTION IS FOR SHOWING ALL THE BACKSTORY STUFFS
+//THIS FUNCTION IS FOR SHOWING ALL THE BACKSTORY AND INIT OF CERTAIN DATA
 function backstoryAlert() {
 
 	//CHANGING MUSIC
@@ -160,9 +158,9 @@ the list of coordinates in the array.
 If the co-ordinates do match up, continue with moving on.
 The the co-ordinates do not match up, stop the function and prompt the 
 player that they are unable to move that way.*/
- var mapCords = new Array();
- var tempX = 0;
- var tempY = 0;
+var mapCords = new Array();
+var tempX = 0;
+var tempY = 0;
 function mapImage(){
 	document.getElementById('gameMap').src='images/maps/' + xCord + 'x' + yCord + '.png';
 	tempX = xCord;
@@ -235,6 +233,21 @@ function moveRight(){
 		alert("You can not move this way");
 	}
 }
+function reset(){
+	hideDiv('battle');
+	xCord = 0;
+	yCord = 0;
+	character.hp = 10;
+	character.gold = 0;
+	document.getElementById('charHP').innerHTML = 'Health: ' + character.hp;
+	document.getElementById('charMoney').innerHTML = 'Money: ' + character.money;
+	changeMusic('audio/hyrule.ogg');
+	monster[boss].hp = monster[boss].maxHP;
+	checkNPCloc();
+	mapImage();
+	alert('You mysteriously wake up in your broken town. All your money is gone. Well time to get back to work!');
+	showDiv('start');
+}
 
 //compares map coordinates to let player know they can not go that way.
 function imageExist() 
@@ -254,7 +267,6 @@ function imageExist()
 
 function checkNPCloc()
 {
-
 	if(cord === "-2x0")
 	{
 		obj=document.getElementById('npc');
@@ -397,14 +409,12 @@ function attack(){
 	var rndPlayer=Math.floor(Math.random()*character.attack);
 	var rndBoss=Math.floor(Math.random()*monster[boss].attack);
 	if(rndPlayer >= rndBoss){
-		alert('Player attacks!');
+		removeHP(1,'boss');
 	}
 	else{
-		alert('Boss attacks!' + rndBoss + rndPlayer);
+		removeHP(1,'char');
 	}
 }
-
-function heal(){}
 
 function retreat(){
 	hideDiv('battle');
@@ -432,32 +442,50 @@ function retreat(){
 //THESE FUNCTIONS AR DEDICATED TO CHARACTER STAT FUNCTIONS
 
 	//THESE FUNCTIONS ADD OR REMOVE HP
-	function removeHP(amt){
-		if (character.hp-amt>0){
-			character.hp=character.hp-amt;
-			document.getElementById('charHP').innerHTML='Health: ' + character.hp;
+	function removeHP(amt,who){
+		if(who === 'char'){
+			if (character.hp-amt>0){
+				character.hp=character.hp-amt;
+				document.getElementById('charHP').innerHTML='Health: ' + character.hp;
+			}
+			else {
+				character.hp=0;
+				document.getElementById('charHP').innerHTML='Health: ' + character.hp;
+				alert('You passed out!');
+				reset();
+			}
+		}else if(who === 'boss'){
+			if (monster[boss].hp-amt>0){
+				monster[boss].hp=monster[boss].hp-amt;
+			}
+			else {
+				monster[boss].hp=0;
+				alert('You defeated the boss!!');
+				alert('You search the corpse and find some money');
+				character.money += monster[boss].money;
+				retreat();
+			}
 		}
-		else {
-			character.hp=0;
-			document.getElementById('charHP').innerHTML='Health: ' + character.hp;
-			alert('You died!');
-		}
-	
+		
 	}
 
 	function addHP(amt){
-		if (character.hp<16){
+		if (character.hp<16 && character.food>0){
 			if (character.hp+amt<=15){
 				character.hp=character.hp+amt;
+				removeFood(1);
 				document.getElementById('charHP').innerHTML='Health: ' + character.hp;
+				document.getElementById('charFood').innerHTML='Food: ' +character.food;
 			}
 			else if (character.hp+amt>15){
 				character.hp=15;
 				document.getElementById('charHP').innerHTML='Health: ' + character.hp;
+				alert('You already have max health');
 			}
+		}else{
+			alert('You have no food left!');
 		}
 	}
-
 
 	//THESE FUNCTIONS ADD OR REMOVE CHAR.FOOD
 	function removeFood(amt){
@@ -472,9 +500,7 @@ function retreat(){
 		document.getElementById('charFood').innerHTML='Food: ' + character.food;
 	}
 
-
 	//THESE FUNCTIONS ADD ATTACK POINTS
-
 	function addAttack(amt){
 		if (character.attack<10){
 			if (character.attack+amt<=10){
@@ -487,7 +513,7 @@ function retreat(){
 			}
 		}
 	}
-
+	
 //THESE FUNCTIONS WILL BE USED FOR NPC\VILLAGE INTERACTIONS
 function openShop(){
 	document.getElementById("heroStore").src = 'images/charSheets/heroIcons/hero' + context + 'up.png';

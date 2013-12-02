@@ -82,11 +82,13 @@ var Weapon = function(name,attack,price){
 }
 var monster = new Array();
 var weapon = new Array();	
+
 //INITIALIZING MONSTERS
 monster.push(new Monster('Shao Kahn',8,8,6,'Brahadur',1,10));
 monster.push(new Monster('Dymen Rangor',9,9,11,'Sangre',2,15));
 monster.push(new Monster('Telvyr Dwenfy',11,11,17,'Joyeuse',3,20));
 monster.push(new Monster('Sauro Vicar',15,15,23,'Malveillant',4,50));
+
 //INITIALIZING WEAPONS
 weapon.push(new Weapon('Kusanagi',5,20));
 weapon.push(new Weapon('Glamdring',10,40));
@@ -124,10 +126,10 @@ function backstoryStart() {
 	//CREATING BACKSTORY ARRAY
 		backArray=new Array();
 		backArray[0] = "There once was a town by the name of Aldshore. It was a peaceful town until....";
-		backArray[1] = "*EXPLOSIONS*";
+		backArray[1] = '<img src="images/explosion.gif"><br>' + "*EXPLOSIONS*";
 		backArray[2] = '...until everyone died, except for one young person named ' + character.name +'.';
 		backArray[3] = character.name + ' wakes up to the smell of smoke, the crackling of dwindling flames and the faint sound of Michael Bolton\'s music in the distance.';
-		backArray[4] = perProC + ' looks around to see darkness, except from the light of the flickering flames surrounding ' + objPro +'. the sight one could not believe was before him. Ashes coat the destroyed town.';
+		backArray[4] = perProC + ' looks around to see darkness, except from the light of the flickering flames surrounding ' + objPro +'. <br>The sight ' + perPro + ' could not believe was before him. Ashes coat the destroyed town.';
 		backArray[5] = character.name + ', in disbelief, faints.';
 		backArray[6] = '...the next morning...';
 		backArray[7] = character.name + ' awakens from their slumber, cold, afraid. ' + perProC + ' gets up and walks around. Everything is gone.';
@@ -560,16 +562,16 @@ function talkNPC(name){
 		alert('You can buy weapons and food at this shop to increase your stats!');
 	}
 	else if (name==='boss0x2NPC'){
-		alert('This boss is LEVEL HERE! Your attack level is ' + character.attack + '. Be prepared before entering.');
+		alert('This boss is named Telvyr Dwenfy! His attack level is 17. Your attack level is ' + character.attack + '. Be prepared before entering.');
 	}		
 	else if (name==='boss0x-2NPC'){
-		alert('This boss is LEVEL HERE! Your attack level is ' + character.attack + '. Be prepared before entering.');
+		alert('This boss is named Shao Kahn! His attack level is 6. Your attack level is ' + character.attack + '. Be prepared before entering.');
 	}			
 	else if (name==='boss2x0NPC'){
-		alert('This boss is named Dymen Rangor. His level is LEVEL HERE! Your attack level is ' + character.attack + '. Be prepared before entering.');
+		alert('This boss is named Dymen Rangor! His attack level is 11. Your attack level is ' + character.attack + '. Be prepared before entering.');
 	}
 	else if (name==='boss-5x0NPC'){
-		alert('This boss is LEVEL HERE! Your attack level is ' + character.attack + '. Be prepared before entering.');
+		alert('This boss is named Sauro Vicar! His attack level is 23. Your attack level is ' + character.attack + '. Be sure you\'re ready for this before entering.');
 	}	
 }
 

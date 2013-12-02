@@ -47,6 +47,7 @@ function charCreate() {
 	weapon:'wooden sword',
 	food:1,
 	money:0,
+	bossCnt:0;
 	};
 	//setting the gender for the character
 	if(document.getElementById('genderMale').checked) {
@@ -65,7 +66,7 @@ function charImgswitch(gender) {
 }
 
 //creating monster datatype/classes
-var Monster = function(name,hp,maxHP,attack,weapon,food,money){
+var Monster = function(name,hp,maxHP,attack,weapon,food,money,defeat){
 	this.name = name;
 	this.hp = hp;
 	this.maxHP = maxHP;
@@ -73,6 +74,7 @@ var Monster = function(name,hp,maxHP,attack,weapon,food,money){
 	this.weapon = weapon;
 	this.food = food;
 	this.money = money;
+	this.defeat = defeat;
 }
 //creating weapon datatype/classes
 var Weapon = function(name,attack,price){
@@ -84,10 +86,10 @@ var monster = new Array();
 var weapon = new Array();	
 
 //INITIALIZING MONSTERS
-monster.push(new Monster('Shao Kahn',8,8,6,'Brahadur',1,10));
-monster.push(new Monster('Dymen Rangor',9,9,11,'Sangre',2,15));
-monster.push(new Monster('Telvyr Dwenfy',11,11,17,'Joyeuse',3,20));
-monster.push(new Monster('Sauro Vicar',15,15,23,'Malveillant',4,50));
+monster.push(new Monster('Shao Kahn',8,8,6,'Brahadur',1,10,0));
+monster.push(new Monster('Dymen Rangor',9,9,11,'Sangre',2,15,0));
+monster.push(new Monster('Telvyr Dwenfy',11,11,17,'Joyeuse',3,20,0));
+monster.push(new Monster('Sauro Vicar',15,15,23,'Malveillant',4,50,0));
 
 //INITIALIZING WEAPONS
 weapon.push(new Weapon('Kusanagi',5,20));
@@ -150,7 +152,7 @@ function backstoryStart() {
 
 //ADVANCES DIVS FOR BACKSTORY PART
 function nextStory(){
-	var div=document.getElementById('introStory');
+	div=document.getElementById('introStory');
 	if (backCount<8){
 		backCount++;
 		div.innerHTML=backArray[backCount];
@@ -414,10 +416,15 @@ function battleCheck(){
 		initBattle(bossPic);
 		break;
 	case '-6x0':
-		alert('BATTLE TIME DUN DUN DUN');
-		bossPic = "boss5Battle";
-		boss = 3;
-		initBattle(bossPic);
+		if(character.bossCnt === 3){
+			alert('BATTLE TIME DUN DUN DUN');
+			bossPic = "boss5Battle";
+			boss = 3;
+			initBattle(bossPic);
+		}
+		else{
+			alert('You need to defeat all 3 bosses before the final fight');
+		}
 		break;
 	default:
 		break;
@@ -433,7 +440,7 @@ function initBattle(pic){
 	obj=document.getElementById('heroBattle');
 	obj.className = 'overHEROb';
 	showDiv('battle');
-	alert('You are battling ' + monster[boss].name + '. It\'s wielding a ' + monster[boss].weapon + '. Better watch out!');
+	alert('You are battling ' + monster[boss].name + '. It\'s wielding a ' + monster[boss].weapon + '. Better watch out! HP: ' + monster[boss].hp + ' Attack: ' + monster[boss].attack );
 }
 
 function attack(){
@@ -478,6 +485,7 @@ function retreat(){
 			if (character.hp-amt>0){
 				character.hp=character.hp-amt;
 				document.getElementById('charHP').innerHTML='Health: ' + character.hp;
+				alert(monster[boss].name + ' hit you for 1 point! HP left: ' + character.hp);
 			}
 			else {
 				character.hp=0;
@@ -488,12 +496,17 @@ function retreat(){
 		}else if(who === 'boss'){
 			if (monster[boss].hp-amt>0){
 				monster[boss].hp=monster[boss].hp-amt;
+				alert('You land a hit! HP left: ' + monster[boss].hp);
 			}
 			else {
 				monster[boss].hp=0;
-				alert('You defeated the boss!!');
+				alert('You defeated ' + monster[boss].name);
 				alert('You search the corpse and find some money');
 				character.money += monster[boss].money;
+				if(monster[boss].defeat === 0){
+					character.bossCnt +=1
+				}
+				monster[boss].defeat = 1;
 				retreat();
 			}
 		}

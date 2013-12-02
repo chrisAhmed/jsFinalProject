@@ -32,6 +32,7 @@ function changeMusic(file){
 	source.src=file;
 	audio.load();
 	}
+	
 
 //THESE FUNCTIONS ARE FOR CHARACTER CREATION
 function charCreate() {
@@ -55,7 +56,7 @@ function charCreate() {
   		character.gender="female"
 	}
 	character.name=document.getElementById('charName').value;
-	backstoryAlert();
+	backstoryStart();
 }
 
 function charImgswitch(gender) {
@@ -93,11 +94,7 @@ weapon.push(new Weapon('Anduril',15,60));
 weapon.push(new Weapon('Wooden Sword',2,2));
 	
 //THIS FUNCTION IS FOR SHOWING ALL THE BACKSTORY AND INIT OF CERTAIN DATA
-function backstoryAlert() {
-
-	//CHANGING MUSIC
-	//changeMusic('audio/hyrule.ogg');   //CANT GET THIS TO PLAY FOR SOME REASON
-	
+function backstoryStart() {
 	//HE\SHE is personal pronoun (perPro), and HIM\HER is objective pronoun (objPro)
 	//Setting Coordinate Variables
 	xCord=0;
@@ -120,18 +117,52 @@ function backstoryAlert() {
 		context="F";
 		document.getElementById('hero').src = 'images/charSheets/heroIcons/hero' + context + 'icon.png';
 		}
-
-	alert('There once was a town by the name of Aldshore. It was a peaceful town until....');
-	alert('*EXPLOSIONS*');
-	alert('...until everyone died, except for one young person named ' + character.name +'.');
-	alert(character.name + ' wakes up to the smell of smoke, the crackling of dwindling flames and the faint sound of Michael Bolton\'s music in the distance.');
-	alert(perProC + ' looks around to see darkness, except from the light of the flickering flames surrounding ' + objPro +'. the sight one could not believe was before him. Ashes coat the destroyed town.');
-	alert(character.name + ', in disbelief, faints.');
-	alert('...the next morning...');
-	alert(character.name + ' awakens from their slumber, cold, afraid. ' + perProC + ' gets up and walks around. Everything is gone.');
-	alert(perProC + ' finds a small hut that managed to defy what destruction happened. Inside ' + perPro + ' finds a wooden sword and some bread.');
-	alert('The adventure begins...');
 	
+	//CHANGING MUSIC
+	changeMusic('audio/storymusic.ogg');
+	
+	//CREATING BACKSTORY ARRAY
+		backArray=new Array();
+		backArray[0] = "There once was a town by the name of Aldshore. It was a peaceful town until....";
+		backArray[1] = "*EXPLOSIONS*";
+		backArray[2] = '...until everyone died, except for one young person named ' + character.name +'.';
+		backArray[3] = character.name + ' wakes up to the smell of smoke, the crackling of dwindling flames and the faint sound of Michael Bolton\'s music in the distance.';
+		backArray[4] = perProC + ' looks around to see darkness, except from the light of the flickering flames surrounding ' + objPro +'. the sight one could not believe was before him. Ashes coat the destroyed town.';
+		backArray[5] = character.name + ', in disbelief, faints.';
+		backArray[6] = '...the next morning...';
+		backArray[7] = character.name + ' awakens from their slumber, cold, afraid. ' + perProC + ' gets up and walks around. Everything is gone.';
+		backArray[8] = perProC + ' finds a small hut that managed to defy what destruction happened. Inside ' + perPro + ' finds a wooden sword and some bread.';
+		backArray[9] = 'The adventure begins...';	
+		
+	//SETTING COUNTER VARIABLE
+	backCount=0;
+			
+	//SETTING FIRST INTRO DIV
+	document.getElementById('introStory').innerHTML=backArray[0];		
+			
+	//SHOWING INTRO DIVS
+	showDiv('intro');
+	showDiv('introStory');
+	showDiv('introNext');
+}
+
+//ADVANCES DIVS FOR BACKSTORY PART
+function nextStory(){
+	var div=document.getElementById('introStory');
+	if (backCount<8){
+		backCount++;
+		div.innerHTML=backArray[backCount];
+		}
+	else {
+		backCount++;
+		div.innerHTML=backArray[backCount];
+		hideDiv('introNext');
+		showDiv('introFinish');
+		}
+}
+
+function beginGame(){
+	hideDiv('intro');
 	character.weapon = weapon[3].name;
 	
 	//INITIALIZING CHARACTER STATS
@@ -148,8 +179,6 @@ function backstoryAlert() {
 	showDiv('start');
 	showDiv('charStats');
 	document.title = 'The Legacy of Hero';
-	
-
 }
 
 /*THESE FUNCTIONS MOVE THE MAP 

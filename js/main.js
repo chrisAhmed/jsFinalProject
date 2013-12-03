@@ -6,6 +6,9 @@ function changePage(filename) {
 	window.location.replace(filename);
 }
 
+function updateText(id,context){
+	document.getElementById(id).innerHTML = context;
+}
 //show a div when needed
 function showDiv(id) {
 	document.getElementById(id).style.display="inline-block";
@@ -487,8 +490,8 @@ function initBattle(pic){
 	obj=document.getElementById('heroBattle');
 	obj.className = 'overHEROb';
 	showDiv('battle');
-	//MAKE UPDATE DIV
-	alert('You are battling ' + monster[boss].name + '. It\'s wielding a ' + monster[boss].weapon + '. Better watch out! HP: ' + monster[boss].hp + ' Attack: ' + monster[boss].attack );
+	dialogue = 'You are battling ' + monster[boss].name + '. It\'s wielding a ' + monster[boss].weapon + '. Better watch out! HP: ' + monster[boss].hp + ' Attack: ' + monster[boss].attack;	
+	updateText('battleUpdate', dialogue);
 }
 
 function attack(){
@@ -533,8 +536,8 @@ function retreat(){
 			if (character.hp-amt>0){
 				character.hp=character.hp-amt;
 				document.getElementById('charHP').innerHTML='Health: ' + character.hp;
-				//MAKE DIV UPDATE
-				alert(monster[boss].name + ' hit you for 1 point! HP left: ' + character.hp);
+				dialogue = monster[boss].name + ' hit you for 1 point! HP left: ' + character.hp;
+				updateText('battleUpdate', dialogue);
 			}
 			else {
 				character.hp=0;
@@ -545,14 +548,14 @@ function retreat(){
 		}else if(who === 'boss'){
 			if (monster[boss].hp-amt>0){
 				monster[boss].hp=monster[boss].hp-amt;
-				//MAKE DIV UPDATE
-				alert('You land a hit! HP left: ' + monster[boss].hp);
+				dialogue = 'You land a hit! HP left: ' + monster[boss].hp;
+				updateText('battleUpdate', dialogue);
 			}
 			else {
 				monster[boss].hp=0;
 				alert('You defeated ' + monster[boss].name);
-				//MAKE DIV UPDATE
-				alert('You search the corpse and find some money');
+				dialogue = 'You search the corpse and find some money';
+				updateText('infoUpdate', dialogue);
 				character.money += monster[boss].money;
 				if(monster[boss].defeat === 0){
 					character.bossCnt +=1
@@ -575,12 +578,12 @@ function retreat(){
 			else if (character.hp+amt>15){
 				character.hp=15;
 				document.getElementById('charHP').innerHTML='Health: ' + character.hp;
-				//MAKE DIV UPDATE
-				alert('You already have max health');
+				dialogue = 'You already have max health';
+				updateText('battleUpdate', dialogue);
 			}
 		}else{
-			//MAKE DIV UPDATE
-			alert('You have no food left!');
+			dialogue = 'You have no food left!';
+			updateText('battleUpdate', dialogue);
 		}
 	}
 
@@ -654,8 +657,8 @@ function addFood(){
 		document.getElementById('charFood').innerHTML='Food: ' + character.food;	
 		document.getElementById('charMoney').innerHTML='Money: ' + character.money
 	}else{
-		//MAKE DIV UPDATE
-		alert("You do not have enough money!");
+		dialogue = 'You do not have enough money!';
+		updateText('storeUpdate', dialogue);
 	}
 }
 
@@ -688,8 +691,8 @@ function purchWeap(wep){
 		document.getElementById('charMoney').innerHTML='Money: ' + character.money;	
 	}
 	else{
-		//MAKE DIV UPDATE
-		alert('You don\'t have enough money!');
+		dialogue = 'You don\'t have enough money!';
+		updateText('storeUpdate', dialogue);
 	}
 }
 
@@ -699,26 +702,26 @@ function randomMoney(){
 
 	if (randomNumber>10 && randomNumber<=15){
 		character.money++;
-		//MAKE DIV UPDATE
-		alert('You have found 1 piece of money on the ground!');
+		dialogue = 'You have found 1 piece of money on the ground!';
+		updateText('infoUpdate', dialogue);
 		}
 	
 	else if (randomNumber>38 && randomNumber<=42){
 		character.money=character.money+2;
-		//MAKE DIV UPDATE
-		alert('You have found 2 pieces of money on the ground!!');		
+		dialogue = 'You have found 2 piece of money on the ground!';
+		updateText('infoUpdate', dialogue);
 		}
 	
 	else if (randomNumber>60 && randomNumber<=63){
 		character.money=character.money+3;
-		//MAKE DIV UPDATE
-		alert('You have found 3 pieces of money on the ground!!!!');		
+		dialogue = 'You have found 3 piece of money on the ground!';
+		updateText('infoUpdate', dialogue);
 		}
 		
 	else if (randomNumber>95 && randomNumber<=97){
 		character.money=character.money+4;
-		//MAKE DIV UPDATE
-		alert('You have found 4 pieces of money on the ground!!!!');		
+		dialogue = 'You have found 4 piece of money on the ground!';
+		updateText('infoUpdate', dialogue);
 		}
 		
 	document.getElementById('charMoney').innerHTML='Money: ' + character.money;	

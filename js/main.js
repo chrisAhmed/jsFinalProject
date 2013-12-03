@@ -109,6 +109,7 @@ var Weapon = function(name,attack,price){
 	this.attack = attack;
 	this.price = price;
 }
+//created arrays for datatypes
 var monster = new Array();
 var weapon = new Array();	
 
@@ -131,7 +132,7 @@ function backstoryStart() {
 	xCord=0;
 	yCord=0;
 	cordMapping();
-	
+	//check and setting vars per gender selection
 	if (character.gender==="male") {
 		perPro="he";
 		objPro="him";
@@ -149,7 +150,7 @@ function backstoryStart() {
 		document.getElementById('hero').src = 'images/charSheets/heroIcons/hero' + context + 'icon.png';
 		}
 	
-	//CHANGING MUSIC
+	//CHANGING MUSIC TO STORY
 	changeMusic('audio/storymusic.ogg');
 	
 	//CREATING BACKSTORY ARRAY
@@ -232,7 +233,7 @@ function debug(){
 	document.getElementById('debugInfo').innerHTML='TempX: ' + tempX + ' TempY: ' + tempY + ' xCord: ' + xCord + ' yCord: ' + yCord;
 	}	
 
-//Setting up button movement for game.
+//BUTTON MOVEMENT
 function moveUp(){
 	tempY+=1;
 	if(imageExist())
@@ -304,6 +305,7 @@ function moveRight(){
 		tempX-=1;		
 	}
 }
+//GAME RESET WHEN CHARACTER DIES
 function reset(){
 	hideDiv('battle');
 	xCord = 0;
@@ -335,7 +337,7 @@ function imageExist()
 	} 
 	return false;
 }
-
+//CHECKING LOCATION TO SPAWN NPCs IN THEIR SPECIFIC LOCATION
 function checkNPCloc()
 {
 	if(cord === "-2x0")
@@ -437,6 +439,7 @@ function cordMapping(){
 	mapCords[28] = "2x-2"; 
 }
 
+//CHECKING BATTLE AREA TO SPAWN BOSS
 function battleCheck(){
 	var bossPic = "";
 	boss = 0;
@@ -480,7 +483,7 @@ function battleCheck(){
 		break;
 	}
 }
-
+//INITIALIZING BATTLE SYSTEM
 function initBattle(pic){
 	hideDiv('start');
 	changeMusic('audio/boss.ogg');
@@ -493,7 +496,7 @@ function initBattle(pic){
 	dialogue = 'You are battling ' + monster[boss].name + '. It\'s wielding a ' + monster[boss].weapon + '. Better watch out! HP: ' + monster[boss].hp + ' Attack: ' + monster[boss].attack;	
 	updateText('battleUpdate', dialogue);
 }
-
+//ATTACK
 function attack(){
 	var rndPlayer=Math.floor(Math.random()*character.attack);
 	var rndBoss=Math.floor(Math.random()*monster[boss].attack);
@@ -504,7 +507,7 @@ function attack(){
 		removeHP(1,'char');
 	}
 }
-
+//RUN FROM BATTLE
 function retreat(){
 	hideDiv('battle');
 	changeMusic('audio/hyrule.ogg');
@@ -649,7 +652,7 @@ function talkNPC(name){
 		alert('Rumor has it that the monsters that were responsible are still in the area. There is one to the North. One to the South. One to the East. And the most powerful of them all to the West.');
 	}		
 }
-
+//ADDS FOOD WHEN PURCHASED IN STORE
 function addFood(){
 	if(character.money >= 5){
 		character.food++;
@@ -661,7 +664,7 @@ function addFood(){
 		updateText('storeUpdate', dialogue);
 	}
 }
-
+//UPDATES WEAPON WHEN PURCHASED
 function purchWeap(wep){
 	if(wep === 'Kusanagi' && character.money >= 20)
 	{

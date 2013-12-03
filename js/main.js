@@ -220,6 +220,7 @@ function moveUp(){
 	else
 	{
 		alert("You can not move this way");
+		tempY-=1;		
 	}
 }
 function moveDown(){
@@ -236,6 +237,7 @@ function moveDown(){
 	else
 	{
 		alert("You can not move this way");
+		tempY+=1;		
 	}
 
 }
@@ -254,6 +256,7 @@ function moveLeft(){
 	else
 	{
 		alert("You can not move this way");
+		tempX+=1;
 	}
 
 }
@@ -271,6 +274,7 @@ function moveRight(){
 	else
 	{
 		alert("You can not move this way");
+		tempX-=1;		
 	}
 }
 function reset(){

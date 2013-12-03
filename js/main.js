@@ -433,26 +433,30 @@ function battleCheck(){
 	switch(cord)
 	{
 	case '0x3':
-		alert('BATTLE TIME DUN DUN DUN');
+		//TODO: add option box for battle proceed
+		//alert('BATTLE TIME DUN DUN DUN');
 		bossPic = "boss2Battle";
 		boss = 2;
 		initBattle(bossPic);
 		break;
 	case '0x-3':
-		alert('BATTLE TIME DUN DUN DUN');
+		//TODO: add option box for battle proceed		
+		//alert('BATTLE TIME DUN DUN DUN');
 		bossPic = "boss1Battle";
 		boss = 0;
 		initBattle(bossPic);
 		break;
 	case '3x0':
-		alert('BATTLE TIME DUN DUN DUN');
+		//TODO: add option box for battle proceed
+		//alert('BATTLE TIME DUN DUN DUN');
 		bossPic = "boss3Battle";
 		boss = 1;
 		initBattle(bossPic);
 		break;
 	case '-6x0':
 		if(character.bossCnt === 3){
-			alert('BATTLE TIME DUN DUN DUN');
+			//TODO: add option box for battle proceed
+			//alert('BATTLE TIME DUN DUN DUN');
 			bossPic = "boss5Battle";
 			boss = 3;
 			initBattle(bossPic);
@@ -476,6 +480,7 @@ function initBattle(pic){
 	obj=document.getElementById('heroBattle');
 	obj.className = 'overHEROb';
 	showDiv('battle');
+	//MAKE UPDATE DIV
 	alert('You are battling ' + monster[boss].name + '. It\'s wielding a ' + monster[boss].weapon + '. Better watch out! HP: ' + monster[boss].hp + ' Attack: ' + monster[boss].attack );
 }
 
@@ -521,6 +526,7 @@ function retreat(){
 			if (character.hp-amt>0){
 				character.hp=character.hp-amt;
 				document.getElementById('charHP').innerHTML='Health: ' + character.hp;
+				//MAKE DIV UPDATE
 				alert(monster[boss].name + ' hit you for 1 point! HP left: ' + character.hp);
 			}
 			else {
@@ -532,11 +538,13 @@ function retreat(){
 		}else if(who === 'boss'){
 			if (monster[boss].hp-amt>0){
 				monster[boss].hp=monster[boss].hp-amt;
+				//MAKE DIV UPDATE
 				alert('You land a hit! HP left: ' + monster[boss].hp);
 			}
 			else {
 				monster[boss].hp=0;
 				alert('You defeated ' + monster[boss].name);
+				//MAKE DIV UPDATE
 				alert('You search the corpse and find some money');
 				character.money += monster[boss].money;
 				if(monster[boss].defeat === 0){
@@ -560,9 +568,11 @@ function retreat(){
 			else if (character.hp+amt>15){
 				character.hp=15;
 				document.getElementById('charHP').innerHTML='Health: ' + character.hp;
+				//MAKE DIV UPDATE
 				alert('You already have max health');
 			}
 		}else{
+			//MAKE DIV UPDATE
 			alert('You have no food left!');
 		}
 	}
@@ -633,6 +643,7 @@ function addFood(){
 		document.getElementById('charFood').innerHTML='Food: ' + character.food;	
 		document.getElementById('charMoney').innerHTML='Money: ' + character.money
 	}else{
+		//MAKE DIV UPDATE
 		alert("You do not have enough money!");
 	}
 }
@@ -666,6 +677,7 @@ function purchWeap(wep){
 		document.getElementById('charMoney').innerHTML='Money: ' + character.money;	
 	}
 	else{
+		//MAKE DIV UPDATE
 		alert('You don\'t have enough money!');
 	}
 }
@@ -676,21 +688,25 @@ function randomMoney(){
 
 	if (randomNumber>10 && randomNumber<=15){
 		character.money++;
+		//MAKE DIV UPDATE
 		alert('You have found 1 piece of money on the ground!');
 		}
 	
 	else if (randomNumber>38 && randomNumber<=42){
 		character.money=character.money+2;
+		//MAKE DIV UPDATE
 		alert('You have found 2 pieces of money on the ground!!');		
 		}
 	
 	else if (randomNumber>60 && randomNumber<=63){
 		character.money=character.money+3;
+		//MAKE DIV UPDATE
 		alert('You have found 3 pieces of money on the ground!!!!');		
 		}
 		
 	else if (randomNumber>95 && randomNumber<=97){
 		character.money=character.money+4;
+		//MAKE DIV UPDATE
 		alert('You have found 4 pieces of money on the ground!!!!');		
 		}
 		

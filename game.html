@@ -1,7 +1,7 @@
-<!doctype html>
-<meta charset="UTF-8">
+<!DOCTYPE html>
 <!-- by Matt M. and Chris A. -->
 <html>
+	<meta charset="UTF-8">
 	<head>
 		<title>Character Creation Screen</title>
 		<script type="text/javascript" src="js/main.js"></script>
@@ -11,11 +11,11 @@
 		<audio autoplay loop id="gameAudio">
  			<source src="audio/charcreate.ogg" type="audio/ogg" id="gameAudioSrc">
 		</audio>		
-		<div align=center style="position:relative;">
+		<div id="mainDiv" class="game">
 			<div id="charCreate">
 				<!-- This div is for character creation -->
 				<h1>Create Your Character</h1>
-				<img id="gameLogo" src="images/logo.png"><br>
+				<img id="gameLogo" src="images/logo.png" alt="The Legacy of Hero"><br>
 				<label for="charName">What is your name?</label>
 				<input id="charName" type="text" value="Sam"><br>
 				<br>
@@ -23,7 +23,7 @@
 				<input type="radio" name="gender" value="male" id="genderMale" onclick="charImgswitch('M')" checked> Male
 				<input type="radio" name="gender" value="female" id="genderFemale" onclick="charImgswitch('F')"> Female
 				<br>
-				<img id="charImg" src="images/charSheets/heroIcons/silhouette.png" height="100">
+				<img id="charImg" src="images/charSheets/heroIcons/silhouette.png" height="100" alt="Character Icon">
 				<br>
 				<button onclick="charCreate()">Begin Game</button><br>
 				<button onclick="openHelp()">Help!</button><br>
@@ -49,9 +49,9 @@
 				<!-- This div is where the game begins -->
 				<h1>The Legacy of Hero</h1>
 				<div id="map">
-					<img id="gameMap" src="images/maps/0x0.png" class="under">
-					<img id="hero" class="overHERO">
-					<img id="npc" src="images/charSheets/npcIcon.png" class="hide">
+					<img id="gameMap" src="images/maps/0x0.png" class="under" alt="Game Map">
+					<img id="hero" src="" class="overHERO" alt="Character Icon">
+					<img id="npc" src="images/charSheets/npcIcon.png" class="hide" alt="NPC Character">
 					<button onclick="talkNPC('shopNPC')" id="talkShop" class="hide">Talk</button>
 					<button onclick="talkNPC('boss0x-2NPC')" id="talkBoss0x-2" class="hide">Talk</button>
 					<button onclick="talkNPC('boss0x2NPC')" id="talkBoss0x2" class="hide">Talk</button>											
@@ -74,9 +74,9 @@
 			<div id="shop" style="display:none; position:relative;">
 				<!-- shop div -->
 				<h1> Shop </h1>
-				<img id="storeBG" src="images/maps/storeBG.png" height="500" class ="under">
-				<img id="npc" src="images/charSheets/npcIcon.png" class="npcStore">
-				<img id="heroStore" class="heroStore">
+				<img id="storeBG" src="images/maps/storeBG.png" height="500" class ="under" alt="Store Background">
+				<img id="npc" src="images/charSheets/npcIcon.png" class="npcStore" alt="NPC Character">
+				<img id="heroStore" src="" class="heroStore" alt="Hero Character">
 				<button id='sword1B' class="sword1" onclick="purchWeap('Kusanagi')"> Kusanagi (+5 Attack) 20 Gold </button>
 				<button id='sword2B' class="sword2" onclick="purchWeap('Glamdring')"> Glamdring (+ 10 Attack) 40 Gold </button>
 				<button id='sword3B' class="sword3" onclick="purchWeap('Anduril')"> Anduril	(+15 Attack) 60 Gold </button>
@@ -85,11 +85,11 @@
 				<button onclick="leaveShop()">Leave the shop</button><br>
 			</div>
 			<div id="battle" style="display:none; position:relative;">
-				<h1> Boss Battle <h1>
-				<div id="map">
-					<img id="mapBattle" class="under">
-					<img id="heroBattle" class="overHERO">
-					<img id="boss" class="bossBattle">
+				<h1> Boss Battle </h1>
+				<div id="bossMap">
+					<img id="mapBattle" src="" class="under" alt="Battle Map">
+					<img id="heroBattle" src="" class="overHERO" alt="Hero Charater">
+					<img id="boss" src="" class="bossBattle" alt="Boss">
 				</div>
 				<button id="Attack" onclick="attack()">Attack!</button>
 				<button id="Heal" onclick="addHP(3)">Heal!</button>
@@ -121,11 +121,11 @@
 				</div>
 			</div>
 			
-			<!---<div id="debugDiv">		
+			<!-- <div id="debugDiv">		
 			<button onclick="debug()">Debug</button>
 				<div id="debugInfo">
 				</div>	
-			</div>	--->	
+			</div>	-->	
 		
 		</div>
 	</body>

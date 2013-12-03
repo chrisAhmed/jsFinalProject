@@ -1,4 +1,5 @@
 <!doctype html>
+<meta charset="UTF-8">
 <!-- by Matt M. and Chris A. -->
 <html>
 	<head>
@@ -6,12 +7,10 @@
 		<script type="text/javascript" src="js/main.js"></script>
 		<link href="css/css.css" rel="stylesheet" type="text/css">
 	</head>
-	<body>
+	<body onload="playMusic()">
 		<audio autoplay loop id="gameAudio">
  			<source src="audio/charcreate.ogg" type="audio/ogg" id="gameAudioSrc">
-		</audio>
-		<body onload="playMusic()">
-		
+		</audio>		
 		<div align=center style="position:relative;">
 			<div id="charCreate">
 				<!-- This div is for character creation -->

@@ -10,6 +10,7 @@
 		<audio autoplay loop id="gameAudio">
  			<source src="audio/charcreate.ogg" type="audio/ogg" id="gameAudioSrc">
 		</audio>
+		<body onload="playMusic()">
 		
 		<div align=center style="position:relative;">
 			<div id="charCreate">
@@ -26,7 +27,7 @@
 				<img id="charImg" src="images/charSheets/heroIcons/silhouette.png" height="100">
 				<br>
 				<button onclick="charCreate()">Begin Game</button><br>
-				<button onclick="openHelp()">Help!</button>
+				<button onclick="openHelp()">Help!</button><br>
 			</div>
 			
 			<div id="intro" style="display:none">
@@ -42,7 +43,7 @@
 				
 				<div id="introFinish" style="display:none">
 					<button onclick="beginGame()">Begin!</button>
-				</div>
+				</div><br>
 			</div> 
 			
 			<div id="start" style="display:none;position:relative;">
@@ -64,7 +65,7 @@
 				<button onclick="moveUp()">Move Up</button>
 				<button onclick="moveDown()">Move Down</button>
 				<button onclick="moveRight()">Move Right</button><br>
-				<button onclick="openHelp()">Help!</button><br>				
+				<button onclick="openHelp()">Help!</button><br>											
 			</div>
 
 			<div id="shop" style="display:none; position:relative;">
@@ -78,9 +79,8 @@
 				<button id='sword3B' class="sword3" onclick="purchWeap('Anduril')"> Anduril	(+15 Attack) 60 Gold </button>
 				<button id='foodB' class="food" onclick="addFood()"> Food (+3 Health) 5 Gold </button>
 				<br>
-				<button onclick="leaveShop()">Leave the shop</button>
+				<button onclick="leaveShop()">Leave the shop</button><br>
 			</div>
-			
 			<div id="battle" style="display:none; position:relative;">
 				<h1> Boss Battle <h1>
 				<div id="map">
@@ -91,10 +91,13 @@
 				<button id="Attack" onclick="attack()">Attack!</button>
 				<button id="Heal" onclick="addHP(3)">Heal!</button>
 				<button id="Retreat" onclick="retreat()" >Retreat!</button>
-				<button onclick="openHelp()">Help!</button>			
+				<button onclick="openHelp()">Help!</button><br>
 			</div>
-			
-			<br>
+			<div id="audioControls">
+				<button onclick="pauseMusic()" id="pauseBtn">Pause Music</button>
+				<button onclick="playMusic()" id="playBtn" style="display:none;">Play Music</button>
+			</div>
+			<br><br>
 			<div id="charStats" class="charStats">
 				<!-- This div shows all the various character statistics -->
 				<br>

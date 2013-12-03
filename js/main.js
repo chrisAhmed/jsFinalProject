@@ -31,7 +31,31 @@ function changeMusic(file){
 	var source = document.getElementById('gameAudioSrc')
 	source.src=file;
 	audio.load();
+	if (musicPlaying===0){
+		pauseMusic();
+		}
+	else{
+		playMusic();
+		}
 	}
+	
+//PAUSE MUSIC
+function pauseMusic(){
+	var audio = document.getElementById('gameAudio');
+	audio.pause();
+	hideDiv('pauseBtn');
+	showDiv('playBtn');
+	musicPlaying=0;
+}
+
+//RESUME MUSIC
+function playMusic(){
+	var audio = document.getElementById('gameAudio');
+	audio.play();
+	hideDiv('playBtn');
+	showDiv('pauseBtn');
+	musicPlaying=1;
+}
 	
 
 //THESE FUNCTIONS ARE FOR CHARACTER CREATION

@@ -170,6 +170,20 @@
 	top:44%;
 	z-index:1;
 }
+.npc-1x-2
+{
+	position:absolute;
+	left:5%;
+	top:65%;
+	z-index:1;
+}
+.npcTalk-1x-2
+{
+	position:absolute;
+	left:5%;
+	top:72%;
+	z-index:1;
+}
 .charStats
 {
 	display:none;
@@ -178,5 +192,5 @@
 	background-image: url(../images/charStats.png);
 	background-size:280px 150px;
 	background-repeat:no-repeat;
-	background-position:center; 	
+	background-position:center 10%; 	
 }

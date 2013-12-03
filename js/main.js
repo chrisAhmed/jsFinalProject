@@ -371,7 +371,14 @@ function checkNPCloc()
 		obj.className = 'npcBoss-5x0';
 		obj=document.getElementById('talkBoss-5x0');
 		obj.className = 'npcBoss-5x0Talk';		
-	}				
+	}
+	else if(cord === "-1x-2")
+	{
+		obj=document.getElementById('npc');
+		obj.className = 'npc-1x-2';
+		obj=document.getElementById('talkNPC-1x-2');
+		obj.className = 'npcTalk-1x-2';		
+	}						
 	else
 	{
 		obj=document.getElementById('npc');
@@ -634,6 +641,10 @@ function talkNPC(name){
 	else if (name==='boss-5x0NPC'){
 		alert('This boss is named Sauro Vicar! His attack level is 23. Your attack level is ' + character.attack + '. Be sure you\'re ready for this before entering.');
 	}	
+	else if (name==='-1x-2NPC'){
+		alert('I am sorry to hear about your town, ' + character.name + '.');
+		alert('Rumor has it that the monsters that were responsible are still in the area. There is one to the North. One to the South. One to the East. And the most powerful of them all to the West.');
+	}		
 }
 
 function addFood(){

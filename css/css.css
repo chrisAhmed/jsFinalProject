@@ -170,3 +170,13 @@
 	top:44%;
 	z-index:1;
 }
+.charStats
+{
+	display:none;
+	width:300px;
+	height:150px;
+	background-image: url(../images/charStats.png);
+	background-size:280px 150px;
+	background-repeat:no-repeat;
+	background-position:center; 	
+}

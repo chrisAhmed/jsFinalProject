@@ -199,6 +199,12 @@ function mapImage(){
 	tempX = xCord;
 	tempY = yCord;
 }
+
+//DEBUGGING FUNCTION
+function debug(){
+	document.getElementById('debugInfo').innerHTML='TempX: ' + tempX + ' TempY: ' + tempY + ' xCord: ' + xCord + ' yCord: ' + yCord;
+	}	
+
 //Setting up button movement for game.
 function moveUp(){
 	tempY+=1;
@@ -233,6 +239,7 @@ function moveDown(){
 	}
 
 }
+
 function moveLeft(){
 	tempX-=1;
 	if(imageExist())

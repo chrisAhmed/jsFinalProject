@@ -705,27 +705,55 @@ function randomMoney(){
 
 	if (randomNumber>10 && randomNumber<=15){
 		character.money++;
-		dialogue = 'You have found 1 piece of money on the ground!';
+		var dialogue = 'You have found 1 piece of money on the ground!';
 		updateText('infoUpdate', dialogue);
 		}
 	
 	else if (randomNumber>38 && randomNumber<=42){
 		character.money=character.money+2;
-		dialogue = 'You have found 2 piece of money on the ground!';
+		var dialogue = 'You have found 2 piece of money on the ground!';
 		updateText('infoUpdate', dialogue);
 		}
 	
 	else if (randomNumber>60 && randomNumber<=63){
 		character.money=character.money+3;
-		dialogue = 'You have found 3 piece of money on the ground!';
+		var dialogue = 'You have found 3 piece of money on the ground!';
 		updateText('infoUpdate', dialogue);
 		}
 		
 	else if (randomNumber>95 && randomNumber<=97){
 		character.money=character.money+4;
-		dialogue = 'You have found 4 piece of money on the ground!';
+		var dialogue = 'You have found 4 piece of money on the ground!';
 		updateText('infoUpdate', dialogue);
 		}
 		
 	document.getElementById('charMoney').innerHTML='Money: ' + character.money;	
 }
+
+
+/*
+//TESTING ARROW KEY MOVEMENT
+document.onkeydown = function(e) {
+    e = e || window.event;
+    switch(e.which || e.keyCode) {
+        case 37: // left
+        moveLeft();
+        break;
+
+        case 38: // up
+        moveUp();
+        break;
+
+        case 39: // right
+        moveRight();
+        break;
+
+        case 40: // down
+        moveDown();
+        break;
+
+        default: return; // exit this handler for other keys
+    }
+    e.preventDefault(); // prevent the default action (scroll / move caret)
+};
+*/

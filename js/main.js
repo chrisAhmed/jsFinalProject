@@ -354,7 +354,9 @@ function checkNPCloc()
 		obj=document.getElementById('npc');
 		obj.className = 'npcBoss0x-2';
 		obj=document.getElementById('talkBoss0x-2');
-		obj.className = 'npcBoss0x-2Talk';		
+		obj.className = 'npcBoss0x-2Talk';	
+		obj=document.getElementById('talkNPC-1x-2');
+		obj.className = 'hide';			
 	}	
 	else if(cord === "0x2")
 	{
@@ -383,6 +385,8 @@ function checkNPCloc()
 		obj.className = 'npc-1x-2';
 		obj=document.getElementById('talkNPC-1x-2');
 		obj.className = 'npcTalk-1x-2';		
+		obj=document.getElementById('talkBoss0x-2');
+		obj.className = 'hide';	
 	}						
 	else
 	{
@@ -399,7 +403,9 @@ function checkNPCloc()
 		obj=document.getElementById('talkBoss2x0');
 		obj.className = 'hide';						
 		obj=document.getElementById('talkBoss-5x0');
-		obj.className = 'hide';			
+		obj.className = 'hide';		
+		obj=document.getElementById('talkNPC-1x-2');
+		obj.className = 'hide';						
 	}
 }
 

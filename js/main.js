@@ -243,6 +243,7 @@ function moveUp(){
 		mapImage();
 		checkNPCloc();
 		document.getElementById("hero").src = 'images/charSheets/heroIcons/hero' + context + 'up.png';
+		updateText('infoUpdate', '---');
 		randomMoney(); //Adds randomness of finding money in the map like other games		
 	}
 	else
@@ -260,6 +261,7 @@ function moveDown(){
 		mapImage();
 		checkNPCloc();
 		document.getElementById("hero").src = 'images/charSheets/heroIcons/hero' + context + 'icon.png';
+		updateText('infoUpdate', '---');
 		randomMoney(); //Adds randomness of finding money in the map like other games		
 	}
 	else
@@ -279,6 +281,7 @@ function moveLeft(){
 		mapImage();
 		checkNPCloc();
 		document.getElementById("hero").src = 'images/charSheets/heroIcons/hero' + context + 'left.png';
+		updateText('infoUpdate', '---');
 		randomMoney(); //Adds randomness of finding money in the map like other games	
 	}
 	else
@@ -297,6 +300,7 @@ function moveRight(){
 		mapImage();
 		checkNPCloc();
 		document.getElementById("hero").src = 'images/charSheets/heroIcons/hero' + context + 'right.png';
+		updateText('infoUpdate', '---');
 		randomMoney(); //Adds randomness of finding money in the map like other games
 	}
 	else

@@ -580,6 +580,7 @@ function retreat(){
 				alert('You defeated ' + monster[boss].name);
 				dialogue = 'You search the corpse and find some money';
 				updateText('infoUpdate', dialogue);
+				playAlert('audio/rupee.ogg');
 				character.money += monster[boss].money;
 				if(monster[boss].defeat === 0){
 					character.bossCnt +=1

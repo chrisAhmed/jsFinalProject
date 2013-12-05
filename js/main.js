@@ -18,11 +18,6 @@ function hideDiv(id) {
 	document.getElementById(id).style.display="none";
 }
 
-function charImgswitch(gender) {
-	//This function changes the image depending on what gender radio button the user clicks
-	document.getElementById('charImg').src='images/charSheets/heroIcons/hero'+ gender + 'icon.png';
-}
-
 //OPENS HELP
 function openHelp(){
 	window.open('help.html','HelpWindow','width=600,height=850');
@@ -101,6 +96,11 @@ function charCreate() {
 	}
 	character.name=document.getElementById('charName').value;
 	backstoryStart();
+}
+
+function charImgswitch(gender) {
+	//This function changes the image depending on what gender radio button the user clicks
+	document.getElementById('charImg').src='images/charSheets/heroIcons/hero'+ gender + 'icon.png';
 }
 
 //creating monster datatype/classes
@@ -686,8 +686,9 @@ function addFood(){
 		character.money-=5;
 		document.getElementById('charFood').innerHTML='Food: ' + character.food;	
 		document.getElementById('charMoney').innerHTML='Money: ' + character.money
+		playAlert('audio/item.ogg');
 	}else{
-		dialogue = 'You do not have enough money!';
+		dialogue = 'You don\'t have enough money!';
 		updateText('storeUpdate', dialogue);
 	}
 }
@@ -701,6 +702,7 @@ function purchWeap(wep){
 		document.getElementById('charWeapon').innerHTML='Weapon: ' + character.weapon;
 		document.getElementById('charAttack').innerHTML='Attack: ' + character.attack;
 		document.getElementById('charMoney').innerHTML='Money: ' + character.money;
+		playAlert('audio/item.ogg');
 	}
 	else if(wep === 'Glamdring' && character.money >= 40)
 	{
@@ -710,6 +712,7 @@ function purchWeap(wep){
 		document.getElementById('charWeapon').innerHTML='Weapon: ' + character.weapon;
 		document.getElementById('charAttack').innerHTML='Attack: ' + character.attack;
 		document.getElementById('charMoney').innerHTML='Money: ' + character.money;
+		playAlert('audio/item.ogg');
 	}
 	else if(wep === 'Anduril' && character.money >= 60)
 	{
@@ -719,6 +722,7 @@ function purchWeap(wep){
 		document.getElementById('charWeapon').innerHTML='Weapon: ' + character.weapon;
 		document.getElementById('charAttack').innerHTML='Attack: ' + character.attack;
 		document.getElementById('charMoney').innerHTML='Money: ' + character.money;	
+		playAlert('audio/item.ogg');
 	}
 	else{
 		dialogue = 'You don\'t have enough money!';

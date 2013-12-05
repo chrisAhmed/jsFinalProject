@@ -574,7 +574,13 @@ function retreat(){
 					character.bossCnt +=1
 				}
 				monster[boss].defeat = 1;
+				if (character.bossCnt===4){
+					hideDiv('battle');
+					showDiv('endGame');
+					}
+				else{
 				retreat();
+				}
 			}
 		}
 		
@@ -740,6 +746,12 @@ function randomMoney(){
 	document.getElementById('charMoney').innerHTML='Money: ' + character.money;	
 }
 
+//FOR GAME END DIV
+function continuePlaying(){
+	hideDiv('endGame');
+	showDiv('start');
+	changeMusic('audio/hyrule.ogg');
+	}
 
 /*
 //TESTING ARROW KEY MOVEMENT

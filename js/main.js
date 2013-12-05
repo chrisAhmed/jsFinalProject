@@ -36,7 +36,7 @@ function closeWindow(){
 //CHANGES MUSIC
 function changeMusic(file){
 	var audio = document.getElementById('gameAudio');
-	var source = document.getElementById('gameAudioSrc')
+	var source = document.getElementById('gameAudioSrc');
 	source.src=file;
 	audio.load();
 	if (musicPlaying===0){
@@ -46,6 +46,7 @@ function changeMusic(file){
 		playMusic();
 		}
 	}
+
 	
 //PAUSE MUSIC
 function pauseMusic(){
@@ -64,7 +65,17 @@ function playMusic(){
 	showDiv('pauseBtn');
 	musicPlaying=1;
 }
-	
+
+//PLAY ALERT SOUND	
+function playAlert(file){
+	if (musicPlaying===1){
+		var audio = document.getElementById('alertAudio');
+		var source = document.getElementById('alertAudioSrc');
+		source.src=file;
+		audio.load();
+		audio.play();
+		}
+}
 
 //THESE FUNCTIONS ARE FOR CHARACTER CREATION
 function charCreate() {
@@ -723,24 +734,28 @@ function randomMoney(){
 		character.money++;
 		var dialogue = 'You have found 1 piece of money on the ground!';
 		updateText('infoUpdate', dialogue);
+		playAlert('audio/rupee.ogg');		
 		}
 	
 	else if (randomNumber>38 && randomNumber<=42){
 		character.money=character.money+2;
 		var dialogue = 'You have found 2 piece of money on the ground!';
 		updateText('infoUpdate', dialogue);
+		playAlert('audio/rupee.ogg');		
 		}
 	
 	else if (randomNumber>60 && randomNumber<=63){
 		character.money=character.money+3;
 		var dialogue = 'You have found 3 piece of money on the ground!';
 		updateText('infoUpdate', dialogue);
+		playAlert('audio/rupee.ogg');		
 		}
 		
 	else if (randomNumber>95 && randomNumber<=97){
 		character.money=character.money+4;
 		var dialogue = 'You have found 4 piece of money on the ground!';
 		updateText('infoUpdate', dialogue);
+		playAlert('audio/rupee.ogg');
 		}
 		
 	document.getElementById('charMoney').innerHTML='Money: ' + character.money;	
@@ -749,8 +764,7 @@ function randomMoney(){
 //FOR GAME END DIV
 function continuePlaying(){
 	hideDiv('endGame');
-	showDiv('start');
-	changeMusic('audio/hyrule.ogg');
+	retreat();
 	}
 
 /*

@@ -87,11 +87,6 @@ function charCreate() {
 	backstoryStart();
 }
 
-function charImgswitch(gender) {
-	//This function changes the image depending on what gender radio button the user clicks
-	document.getElementById('charImg').src='images/charSheets/heroIcons/hero'+ gender + 'icon.png';
-}
-
 //creating monster datatype/classes
 var Monster = function(name,hp,maxHP,attack,weapon,food,money,defeat){
 	this.name = name;

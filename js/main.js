@@ -18,6 +18,11 @@ function hideDiv(id) {
 	document.getElementById(id).style.display="none";
 }
 
+function charImgswitch(gender) {
+	//This function changes the image depending on what gender radio button the user clicks
+	document.getElementById('charImg').src='images/charSheets/heroIcons/hero'+ gender + 'icon.png';
+}
+
 //OPENS HELP
 function openHelp(){
 	window.open('help.html','HelpWindow','width=600,height=850');

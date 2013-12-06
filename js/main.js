@@ -467,33 +467,53 @@ function battleCheck(){
 	switch(cord)
 	{
 	case '0x3':
-		//TODO: add option box for battle proceed
-		//alert('BATTLE TIME DUN DUN DUN');
-		bossPic = "boss2Battle";
-		boss = 2;
-		initBattle(bossPic);
-		break;
+		var r=confirm('Are you sure you want to go into battle?');
+			if (r==true){
+				bossPic = "boss2Battle";
+				boss = 2;
+				initBattle(bossPic);
+				break;
+				}
+			else{
+				moveDown();
+				break;
+			}
 	case '0x-3':
-		//TODO: add option box for battle proceed		
-		//alert('BATTLE TIME DUN DUN DUN');
-		bossPic = "boss1Battle";
-		boss = 0;
-		initBattle(bossPic);
-		break;
+		var r=confirm('Are you sure you want to go into battle?');
+			if (r==true){		
+				bossPic = "boss1Battle";
+				boss = 0;
+				initBattle(bossPic);
+				break;
+				}
+			else{
+				moveUp();
+				break;
+				}
 	case '3x0':
-		//TODO: add option box for battle proceed
-		//alert('BATTLE TIME DUN DUN DUN');
-		bossPic = "boss3Battle";
-		boss = 1;
-		initBattle(bossPic);
-		break;
+		var r=confirm('Are you sure you want to go into battle?');
+			if (r==true){
+				bossPic = "boss3Battle";
+				boss = 1;
+				initBattle(bossPic);
+				break;
+				}
+			else{
+				moveLeft();
+				break;
+				}
 	case '-6x0':
 		if(character.bossCnt === 3){
-			//TODO: add option box for battle proceed
-			//alert('BATTLE TIME DUN DUN DUN');
-			bossPic = "boss5Battle";
-			boss = 3;
-			initBattle(bossPic);
+			var r=confirm('Are you sure you want to go into battle?');
+				if (r==true){
+					bossPic = "boss5Battle";
+					boss = 3;
+					initBattle(bossPic);
+				}
+				else{
+					moveRight();
+					break;
+				}
 		}
 		else{
 			alert('You need to defeat all 3 bosses before the final fight');
@@ -589,6 +609,7 @@ function retreat(){
 				if (character.bossCnt===4){
 					hideDiv('battle');
 					showDiv('endGame');
+					changeMusic('audio/end.ogg');	
 					}
 				else{
 				retreat();
